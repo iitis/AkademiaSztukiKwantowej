@@ -6,12 +6,15 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
+        working-directory: lectures/01-introduction/txt/
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
+        working-directory: lectures/01-introduction/txt/
         with:
-          root_file: lectures/01-introduction/txt/lecture.tex
+          root_file: lecture.tex
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
+        working-directory: lectures/01-introduction/txt/
         with:
           name: PDF
-          path: lectures/01-introduction/txt/lecture.pdf
+          path: lecture.pdf
