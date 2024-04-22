@@ -1,0 +1,5 @@
+1. Classical Ising model
+    - sorting energies vs annealing energies (demonstrate the connection),
+    - Brute - force approach, demonstrate the algorithm and explain scaling
+
+2.    
