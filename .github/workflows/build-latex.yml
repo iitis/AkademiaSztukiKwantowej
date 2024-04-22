@@ -1,13 +1,13 @@
 name: Build LaTeX document
 on: [push]
 
-jobs:
-  defaults:
-    run:
-      working-directory: ./lectures/01-introduction/txt/
 
+jobs:
   build_latex:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./lectures/01-introduction/txt/
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
