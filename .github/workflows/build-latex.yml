@@ -2,8 +2,8 @@ name: Build LaTeX document
 on: [push]
 
 defaults:
- run:
-  working-directory: ./lectures/01-introduction/txt/
+  run:
+    working-directory: ./lectures/01-introduction/txt/
 
 jobs:
   build_latex:
@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
+        work_in_root_file_dir: true
         with:
           root_file: lecture.tex
       - name: Upload PDF file
