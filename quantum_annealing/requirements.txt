@@ -1,2 +1,4 @@
 dwave-ocean-sdk>=3.3.0
 matplotlib>=3.3.4
+numpy>=1.26.0
+networkx>=3.3
