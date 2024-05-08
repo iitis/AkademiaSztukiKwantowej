@@ -8,13 +8,23 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: Compile LaTeX document
+      - name: Compile LaTeX document 1
         uses: xu-cheng/latex-action@v3
         with:
           working_directory: ./lectures/01-introduction/txt/
           root_file: lecture.tex
-      - name: Upload PDF file
+      - name: Upload PDF file 1
         uses: actions/upload-artifact@v4
         with:
           name: PDF
           path: ./lectures/01-introduction/txt/lecture.pdf
+      - name: Compile LaTeX document 2
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: ./lectures/99-materals/
+          root_file: ksiazeczka.tex
+      - name: Upload PDF file 2
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF
+          path: ./lectures/01-introduction/ksiazeczka.pdf
