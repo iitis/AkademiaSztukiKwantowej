@@ -1,0 +1,60 @@
+% LTeX: language=pl-PL
+\documentclass[a4paper, 11pt, twoside, final]{memoir}
+
+\usepackage{graphicx}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{bbold}
+\usepackage[makeindex]{imakeidx}
+\usepackage{qcircuit}
+\usepackage{pdfpages}
+\usepackage{pgffor}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage{indentfirst}
+\usepackage{xcolor}
+\usepackage{soulutf8}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{epigraph}
+\usepackage{ragged2e}
+\usepackage[hidelinks]{hyperref}
+\usepackage[inline]{enumitem}
+
+\usetikzlibrary{backgrounds,fit,decorations.pathreplacing,quotes,angles}
+
+\makeindex[options=-s lou3.ist]
+\indexsetup{level=\chapter*,firstpagestyle=chapter}
+
+\newsubfloat{figure}
+
+\renewcommand{\i}{{\mathrm i}}
+\newcommand{\id}{I}
+\newcommand{\Complex}{\mathbb{C}}
+\newcommand{\Real}{\mathbb{R}}
+\newcommand{\Field}{\mathbb{F}}
+\newcommand{\conj}[1]{{#1}^*}
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\newterm}[1]{\emph{#1}}
+\makeatletter
+\newcommand{\chapterauthor}[1]{%
+	{\parindent0pt\vspace*{-25pt}%
+		\linespread{1.1}\large\scshape#1%
+		\par\nobreak\vspace*{35pt}}
+	\@afterheading%
+}
+\makeatother
+
+\title{}
+\author{}
+\begin{document}
+
+\include{ch_mechkw}
+\include{ch_infkw}
+\include{ch_podstawy_mat}
+
+\end{document}
