@@ -16,7 +16,7 @@ jobs:
       - name: Upload PDF file 1
         uses: actions/upload-artifact@v4
         with:
-          name: PDF
+          name: PDF1
           path: ./lectures/01-introduction/txt/lecture.pdf
       - name: Compile LaTeX document 2
         uses: xu-cheng/latex-action@v3
@@ -26,5 +26,5 @@ jobs:
       - name: Upload PDF file 2
         uses: actions/upload-artifact@v4
         with:
-          name: PDF
+          name: PDF2
           path: ./lectures/99-materals/ksiazeczka.pdf
