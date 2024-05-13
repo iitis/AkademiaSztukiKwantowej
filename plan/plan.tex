@@ -1,0 +1,93 @@
+%!TEX program = lualatex
+\documentclass{standalone}
+\usepackage{physics}
+\usepackage{tikz}
+\usetikzlibrary{graphs, graphdrawing,
+fit,
+backgrounds,
+positioning,
+calc,
+arrows.meta}
+
+\usegdlibrary{layered}
+
+\begin{document}
+  \begin{tikzpicture}
+       \graph[layered layout,
+       nodes={align=center,
+            fill = blue!20, draw = blue, thick, rectangle, rounded corners 
+            }, 
+            % node distance=2cm,
+            grow down sep=5cm, branch left sep,
+            level distance=3cm, sibling sep=.5em, sibling distance=1cm,
+            edges={blue!70!black, thick, looseness=.5, out=0, in=180, relative}
+            ]
+            {
+        UnitaryMat / "Unitary matrix\\ $UU^\dagger=U^\dagger U=\mathbf{1}$",
+        HermitianMatrix / "Hermitian Matrix\\ $H^\dagger=H$",
+        MatrixExp / "Matrix exponent\\ $e^{X}=\sum_{k=0}^\infty \frac{X^k}{k!}$",
+        QuantumGate / "Quantum gate\\ $U$",
+        ParametrizedQuantumGate / "Parametrized quantum gate\\ $U(\alpha)$",
+        QuantumCircuit / "Quantum circuit\\ $\prod_{i=1}^{N}U_i(\theta_i,x_i)$",
+        ParametrizedQuantumCircuit / "Parametrized quantum circuit\\ $U(\theta,x)=\prod_{i=1}^{N}U_i(\theta_i,x_i)$",
+        QNN / "Quantum neural network\\ $f(\theta,x)=\bra{\psi_0}U(\theta,x)^\dagger O U(\theta,x)\ket{\psi_0}$",    
+        ODE / "System of ordinary differential equations",
+        ShroedingerEqu / "Shroedinger's equation\\ $\displaystyle \mathrm {i} \hbar {\frac {d}{dt}}\ket{\Psi(t)} ={\hat {H}}\ket{\Psi(t)}$",
+        PauliMatrices / "Pauli matrices",
+        HermitianGenerator / "Hermitian generator\\ $U(\alpha)=e^{-\mathrm{i}\alpha H}$",
+        Observable / "Observable\\ $O$",
+        ParamShiftRule / "Parameter shift rule\\ $f(\theta) = \expval{O}_{U(\theta)\ket{\psi}}$ 
+        $U(\theta)=e^{-i \theta G}$ and \\
+        $\mathrm{spec}(G)=\{-r,r\}$ then\\
+        $\frac{\partial}{\partial \theta}f = r\left[f(\theta+s)-f(\theta-s)\right],$\\
+        where $s=\pi/4r$.",
+        GradDescent / "Gradient descent\\  $\theta^{(t+1)} = \theta^{(t)} - \eta \nabla f(\theta^{(t)});$",
+        Grad / "Gradient\\ $\nabla f(x)=\sum_i \frac{\partial f}{\partial x_i}\hat{x}$",
+        QuantMeasurement / "Quantum measurement\\
+        $\mu$: $A=\{a_i\}_{i=1}^n\to P=\{P_i\}_{i=1}^n$, where\\
+        $\sum_{i=1}^n P_i = \mathbf{1} \text{ and } P_i^2=P_i$\\
+        given $\ket{\psi}$ $p(a_i)=\bra{\psi}P_i\ket{\psi}$\\
+        given $a_i$:
+        $
+        \ket{\psi}_{a_i} = \frac{P_i\ket{\psi}}{\sqrt{\bra{\psi}P_i\ket{\psi}}}.
+        $",
+        ExpectationValue / "ExpectationValue\\ $\expval{O}_{\ket{\psi}} = \bra{\psi}O\ket{\psi}$",
+        OuterProd / "Outer product\\ $\ketbra{\psi}{\phi}$",
+        InnerProd / "Inner product\\ $\braket{\psi}{\phi}$",
+        Kron / "Kronecker (tensor) product\\ $\ket{\psi}\otimes\ket{\phi}$",
+        Projection / "Projection matrix\\ $\ketbra{\psi}{\psi}$",
+        MatrixProduct / "Matrix product",
+        QuantSysComposition / "Quantum systems composition\\ $\ket{\psi}\otimes\ket{\phi}$",
+        
+
+        PauliMatrices -> HermitianGenerator,
+        PauliMatrices -> QuantumGate,
+        InnerProd -> QuantMeasurement,
+        InnerProd -> MatrixProduct,
+        OuterProd -> Projection,
+        Projection -> QuantMeasurement,
+        MatrixProduct -> QuantumCircuit,
+        Kron -> QuantSysComposition,
+        QuantSysComposition -> QuantumCircuit,     
+        HermitianMatrix -> HermitianGenerator,
+        MatrixExp -> HermitianGenerator,
+        UnitaryMat -> QuantumGate,
+        QuantumGate -> ParametrizedQuantumGate,
+        ParametrizedQuantumGate -> ParametrizedQuantumCircuit,
+        ParametrizedQuantumCircuit -> ParamShiftRule,
+        ParamShiftRule -> GradDescent,
+        HermGen -> ParametrizedQuantumGate,
+        QuantumGate -> QuantumCircuit,
+        QuantumCircuit -> ParametrizedQuantumCircuit,
+        GradDescent -> QNN,
+        ParametrizedQuantumCircuit -> QNN,
+        Observable -> QNN,
+        HermitianMatrix -> Observable,
+        Grad -> GradDescent,
+        ODE -> ShroedingerEqu,
+        ShroedingerEqu -> HermGen,
+        Grad -> ODE,
+        QuantMeasurement -> Observable
+    };
+  \end{tikzpicture}
+\end{document}
