@@ -27,3 +27,8 @@
 - Implementacja algorytmu równoległego wyżarzania.
 - Wykorzystanie procesorów graficznych (GPU) w algorytmach heurystycznych.
 - Analiza porównawcza algorytmów dla wybranych instancji problemów Isinga.
+
+## Zagadnienia dodatkowe 
+- Sieci tensorowe: rodzaje, konstrukcja, zwężanie.
+- Siec tensorowa typu MPS (1D) oraz PEPS (2D).
+- Emulacja procesorów wyżarzających za pomocą sieci tensorowych.
