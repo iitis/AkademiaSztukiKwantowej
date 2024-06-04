@@ -5,7 +5,7 @@
 ## Zagadnienia teoretyczne
 
 - Klasyczny model Isinga: kodowanie / zmienne, znaczenie, stany nisko-energetyczne.
-- Interpretacja fizyczna modelu Isinga: znaczenie odziaływanń i pól magnetycznych.
+- Interpretacja fizyczna modelu Isinga: znaczenie odziaływań i pól magnetycznych.
 - Model QUBO: znaczenie, przykłady, równoważność z modelem Isinga.
 - Kodowanie dyskretnych problemów optymalizacyjnych za pomocą QUBO / Isinga.
 - Algorytm wyczerpującego przeszukiwania (Brute-Force): certyfikacja, ograniczenia.
