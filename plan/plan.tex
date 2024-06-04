@@ -76,7 +76,7 @@ arrows.meta}
         ParametrizedQuantumGate -> ParametrizedQuantumCircuit,
         ParametrizedQuantumCircuit -> ParamShiftRule,
         ParamShiftRule -> GradDescent,
-        HermGen -> ParametrizedQuantumGate,
+        HermitianGenerator -> ParametrizedQuantumGate,
         QuantumGate -> QuantumCircuit,
         QuantumCircuit -> ParametrizedQuantumCircuit,
         GradDescent -> QNN,
@@ -85,7 +85,7 @@ arrows.meta}
         HermitianMatrix -> Observable,
         Grad -> GradDescent,
         ODE -> ShroedingerEqu,
-        ShroedingerEqu -> HermGen,
+        ShroedingerEqu -> HermitianGenerator,
         Grad -> ODE,
         QuantMeasurement -> Observable
     };
