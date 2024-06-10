@@ -1,0 +1,83 @@
+% !TeX spellcheck = pl_PL-Polish
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{polski}
+\usepackage{indentfirst}
+\usepackage[a4paper]{geometry}
+\usepackage{todonotes}
+\presetkeys{todonotes}{color=black, backgroundcolor=white,size=\footnotesize}{}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{ctable}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{soulutf8}
+\usetikzlibrary{fit,chains}
+
+\newcommand{\todoi}[2]{\todo[inline,color=#2!30]{#1}}
+\newcommand{\todoii}[3]{\todo[inline,color=#2!30,inlinewidth=#3cm,noinlinepar]{#1}}
+\newcommand{\todox}{\todoii{do uzupełnienia}{red}{3}}
+\DeclareRobustCommand{\hlcyan}[1]{{\sethlcolor{cyan}\hl{#1}}}
+\DeclareRobustCommand{\hlgray}[1]{{\sethlcolor{lightgray}\hl{#1}}}
+
+\begin{document}
+
+\title{Podstawy uczenia maszynowego. Zagadnienia wprowadzające do tematyki Akademii Sztuki Kwantowej}
+\author{Plan zajęć}
+\maketitle
+
+\section*{Część teoretyczna/wykładowa}
+
+\subsection*{Wprowadzenie}
+
+\begin{enumerate}
+	\item Podstawowe zagadnienia uczenia maszynowego. Cel, problemy, ograniczenia. Jakie zadania realizujemy, jakich nie realizujemy za pomocą ML.
+	\item Przykładowy problem -- klasyfikacja hiperspektralna, analiza kryminalistyczna, ślady krwi. Rola wiedzy problemowej/domenowej (lub jej braku) w zadaniu. Oczekiwany wynik
+	\item Podstawowe pojęcia -- model, trening, ocena wydajności, dobór hiperparametrów, klasyfikacja/regresja, [i inne].
+
+\end{enumerate}
+
+\subsection*{Sztuczne sieci neuronowe}
+
+\begin{enumerate}
+	\item Wprowadzenie ,,ideowe'', omówienie przykładu ,,owoce''
+	\item Budowa sieci MLP, schemat klasyfikacji dla problemu hiperspektralnego śladów krwi
+	\item Analiza działania wytrenowanej sieci dla problemu. Wizualizacja wyników. Wagi sieci. Obserwacja działania
+	\item Proces uczenia -- stan początkowy, propagacja wsteczna, parametry, analiza przykładowego przebiegu uczenia
+	\item Proces uczenia (2) -- nadzór, rola hiperparametrów itd. Przykład zmiany architektury
+	\item Optymalizacja -- porównanie architektur, ocena wydajności, wybór modelu, weryfikacja, walidacja krzyżowa, optymalizacja hiperparametrów, przetrenowanie
+\end{enumerate}
+
+\subsection*{Metody jądrowe}
+
+\begin{enumerate}
+	\item Klasyfikacja jeszcze raz, idea używania przykładów i miary podobieństwa
+	\item Ograniczenia sieci neuronowych, różne sytuacje klasyfikacji wymagają różnych metod, wyjaśnialność 
+	\item PCA jako narzędzie wizualizacji, macierz kowariancji
+	\item SVM, optymalizacja marginesu, parametr C
+	\item kernel-SVM, kernel trick, Gaussian kernel, gamma 
+	\item kernel-PCA jako uogólnienie
+	\item analiza, przykłady, zastosowania
+\end{enumerate}
+
+\subsection*{Sieci głębokiego uczenia}
+
+\begin{enumerate}
+	\item Problemy przetwarzania obrazów i tekstu -- ograniczenia sieci MLP
+	\item Sieci złożone, głębokie hierarchie cech 
+	\item Konwolucja i pooling -- model HMAX, potem rozwinięcia 
+	\item Sieć konwolucyjna, analiza działania
+	\item (*) Problem zależności w sekwencjach symboli przy przetwarzaniu tekstu
+	\item (*) Idea sieci transformers
+	\item Podsumowanie -- złożone architektury, złożone sieci
+\end{enumerate}
+
+(Dla (*) jeszcze się zastanawiam, czy i w jakiej formie to włączyć -- zobaczę ile czasu mi wyjdzie na wcześniejsze)
+
+\end{document}
