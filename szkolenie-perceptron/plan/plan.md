@@ -2,7 +2,7 @@
 
 # Uczenie architektur kwantowych
 
-## Zagadnienia teoretyczne
+## Dzień 1
 
 ### Przypomnienie zagadnień:
 - Kubity oraz stany kubitu.
@@ -13,24 +13,28 @@
 - Perceptron - uczenie.
 - Python - przypomnienie podstawowej składni.
 
-## Teoria
+### Teoria
 - Bramkowe komputery kwantowe: budowa, zasady działania.
 - Ograniczenia komputerów kwantowych.
 - Źródła błędów w komputerach bramkowych.
 - Kwantowy model perceptronu: budowa, elementy składowe, przykładowe obwody.
 
-## Praktyka
+### Praktyka
 - Uzyskanie dostępu do IBMQ.
 - Podstawy biblioteki `qiskit`.
 - Podstawowe operacje w portalu IBMQ, monitorowanie obliczeń.
 - Symulatory architektur komputerów bramkowych, implementacja pierwszego programu.
 - Symulatory lokalne vs chmurowe.
 - Implementacja programu uruchamianego na komputerze bramkowym: przygotowanie stanu splątanego.
+
+## Dzień 2
+
+### Praktyka
 - Implementacja składowych perceptronu.
 - Obserwacje działania modelu dla losowo dobranych wag.
 - Implementacja algorytmu uczenia kwantowego perceptronu.
 - Uczenie modelu, weryfikacja wyników.
 
-## Zagadnienia dodatkowe:
+### Zagadnienia dodatkowe:
 - Model bramkowy vs wyżarzanie kwantowe.
 - Algortym QAOA.
