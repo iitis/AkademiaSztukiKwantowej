@@ -3,6 +3,12 @@
 ### Cel warsztatów
 Warsztaty mają na celu wprowadzenie uczestników do świata obliczeń kwantowych oraz naukę implementacji kwantowego modelu perceptronu z wykorzystaniem komputerów kwantowych IBM. W trakcie dwudniowego spotkania uczestnicy zdobędą teoretyczną wiedzę oraz praktyczne umiejętności niezbędne do pracy z kwantowymi modelami obliczeniowymi.
 
+### Czas trwania
+Warsztaty odbywają się w ciągu dwóch dni, po 6 godzin każdego dnia z przerwami na odpoczynek i lunch.
+
+### Wymagania
+Warsztaty wymagają sali wyposażonej w komputery dla każdego uczestnika lub możliwości korzystania z własnych laptopów. 
+
 ## Dzień 1: Wprowadzenie i podstawy
 
 ### Przypomnienie zagadnień
