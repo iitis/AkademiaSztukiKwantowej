@@ -1,6 +1,6 @@
 % LTeX: language=pl-PL
-\chapter{Mechanika kwantowa}
-\chapterauthor{PG}
+\lecture{Mechanika kwantowa}
+% \chapterauthor{PG}
 % +Oskar Słowik w wydaniu 2
 
 Mechanika kwantowa opisuje zachowania bardzo małych cząstek fizycznych,
@@ -417,13 +417,13 @@ Pierwszy obrót to obrót wokół osi~$z$, drugi -- wokół osi~$y$, a~trzeci --
 
 \begin{figure}
 	\centering
-	\subbottom[Bramka $\mat{R_z}(\beta)$ dokonująca obrotu wokół osi $z$ łączącej $\ket{0}$ z~$\ket{1}$.
+	[Bramka $\mat{R_z}(\beta)$ dokonująca obrotu wokół osi $z$ łączącej $\ket{0}$ z~$\ket{1}$.
 		\label{rys:bramka-rz}]{\includegraphics[width=0.46\linewidth]{pics/Rz}}
 	\hfill
-	\subbottom[Bramka $\mat{R_y}(\gamma)$ dokonująca obrotu wokół osi $y$ łączącej $\ket{+_\i}$
+	[Bramka $\mat{R_y}(\gamma)$ dokonująca obrotu wokół osi $y$ łączącej $\ket{+_\i}$
 		z~$\ket{-_\i}$.\label{rys:bramka-ry}]{\includegraphics[width=0.46\linewidth]{pics/Ry}}
-	\caption{Działanie bramek $\mat{R_z}(\beta)$ -- panel~\subcaptionref{rys:bramka-rz} oraz~$\mat{R_y}(\gamma)$
-	-- panel~\subcaptionref{rys:bramka-ry} na~stanach $\ket{0}$, $\ket{+}$, $\ket{+_\i}$ (czarne strzałki).
+	\caption{Działanie bramek $\mat{R_z}(\beta)$ -- panel~\ref{rys:bramka-rz} oraz~$\mat{R_y}(\gamma)$
+	-- panel~\ref{rys:bramka-ry} na~stanach $\ket{0}$, $\ket{+}$, $\ket{+_\i}$ (czarne strzałki).
 	Wartości $\beta$ oraz~$\gamma$ rosną zgodnie z~przechodzeniem kolorów strzałek od~ciemniejszych
 	do~jaśniejszych i~wynoszą $(0{,}05\pi,0{,}1\pi,0{,}15\pi,0{,}2\pi)$.
 	}
@@ -883,10 +883,16 @@ nie~wpływa na~wyniki pomiarów.
 
 \begin{figure}
 	\centering
-	\subbottom[Pomiar z~wykorzystaniem macierzy $\mat{P}_0=\ketbra{0}{0},\mat{P}_1=\ketbra{1}{1}$.\label{rys:pomiar-P}]%
-	{\includegraphics[height=0.38\textheight]{pics/pomiar_sz}}\\
-	\subbottom[Pomiar z~wykorzystaniem macierzy $\mat{Q}_{-_\i}=\ketbra{-_\i}{-_\i}, \mat{Q}_{+_\i}=\ketbra{+_\i}{+_\i}$.\label{rys:pomiar-Q}]%
-	{\includegraphics[height=0.38\textheight]{pics/pomiar_sy}}
+	\begin{subfigure}{0.3\textwidth}
+		\includegraphics[height=0.38\textheight]{pics/pomiar_sz}\\
+		\caption{Pomiar z~wykorzystaniem macierzy $\mat{P}_0=\ketbra{0}{0},\mat{P}_1=\ketbra{1}{1}$.}
+		\label{rys:pomiar-P}
+	\end{subfigure}
+\begin{subfigure}{width}{0.3\textwidth}
+	\includegraphics[height=0.38\textheight]{pics/pomiar_sy}
+	\caption{Pomiar z~wykorzystaniem macierzy $\mat{Q}_{-_\i}=\ketbra{-_\i}{-_\i}, \mat{Q}_{+_\i}=\ketbra{+_\i}{+_\i}$.}
+	\label{rys:pomiar-Q}
+\end{subfigure}
 	\caption{Schemat dwóch różnych pomiarów kwantowych tego samego stanu
 		$\sqrt{0{,}7}\ket{0}+\sqrt{0{,}3}\i\ket{1}$. W~zależności od~rodzaju pomiaru
 		uzyskujemy inne wyniki z~różnymi prawdopodobieństwami oraz~inne stany
