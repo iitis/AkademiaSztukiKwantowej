@@ -1,0 +1,107 @@
+
+% \usetheme{default}
+% \usetheme{Boadilla}
+% \definecolor{AstroCeNTViolet}{rgb}{0.4296875, 0.140625, 0.6171875} 
+% \usecolortheme[named=AstroCeNTViolet]{structure}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\setcounter{MaxMatrixCols}{20}
+
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{physics}
+\usepackage{todonotes}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage[export]{adjustbox}
+\usepackage{fontawesome}
+\usepackage{qrcode}
+\usepackage{circuitikz}
+\usepackage{qcircuit}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{overpic}
+% \newcommand{\mc}[1]{\multicolumn{2}{c}{#1}}
+
+\usepackage[lined]{algorithm2e}
+\usepackage{comment}
+\usepackage{stmaryrd}
+\usepackage{multimedia}
+
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\Complex}{\mathbb{C}}
+\newcommand{\Real}{\mathbb{R}}
+\usetikzlibrary{shadows,arrows.meta,positioning,backgrounds,fit,chains,scopes}
+
+\newcommand{\tensor}[1]{\mathcal{#1}}
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\tucker}[2]{\llbracket#1;#2\rrbracket}
+\newcommand{\set}[1]{\mathfrak{#1}}
+
+\newcommand{\V}[1]{\mathbf{#1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\HH}{\mathcal{H}}
+
+
+\newcommand{\PTr}[2]{\mathrm{Tr}_{#1}\left(#2\right)}
+\newcommand{\eig}[1]{\mathrm{eig}\left(#1\right)}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{\tiny #1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\newcommand{\source}[1]{\blfootnote{Source: #1}}
+
+% \usepackage[style=verbose,backend=biber]{biblatex}
+\usepackage[style=verbose,backend=biber,url=false,doi=false]{biblatex}
+\mode<beamer>{ 	% In the 'beamer' mode
+	\hypersetup{pdfpagemode=FullScreen}        % Enable Full screen mode
+}
+\mode<handout>{	% In the 'handout' mode
+	\hypersetup{pdfpagemode=None}		
+	\usepackage{pgfpages}
+	\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]	% Show 4 slides on 1 page
+	\usetheme{boxes}
+	\addheadbox{structure}{\quad\insertpart\hfill\insertsection\hfill\insertsubsection\qquad}     % Content of header
+	\addfootbox{structure}{\quad\insertauthor\hfill\insertframenumber\hfill\insertsubtitle\qquad} % Content of footer
+}
+
+\author[Piotr Gawron]{
+	Piotr Gawron\\
+	{\scriptsize \href{mailto:piotr.gawron@cyfronet.pl}{\texttt{piotr.gawron@cyfronet.pl}}}\\}
+\title[]{Quantum computing and quantum machine learning}
+\logo{}
+\date{}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}}
+\newcommand{\footlogos}{\setbeamertemplate{footline}{}}
+
+\setbeamertemplate{navigation symbols}{}
+
+%\AtBeginPart{
+%  \begin{frame}<beamer>
+%    \partpage
+%    % \frametitle{Outline for lecture \thepart}
+%    % \tableofcontents[sections=\value{part}]
+%  \end{frame}
+%}
+\AtBeginPart{ % At begin part: display its name
+	\frame{\partpage}
+} 
+
+\AtBeginSection[]{
+  \begin{frame}<beamer>
+    \frametitle{Outline for section \thesection}
+    \tableofcontents[sections=\value{section}]
+  \end{frame}
+}
+\addbibresource{qml_agh_lectures.bib}

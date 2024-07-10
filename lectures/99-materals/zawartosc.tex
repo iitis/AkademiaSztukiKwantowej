@@ -22,11 +22,12 @@
 \usepackage{epigraph}
 % \usepackage{ragged2e}
 % \usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
 \usepackage[inline]{enumitem}
-% \usepackage{booktabs}
+\usepackage{booktabs}
 \usepackage{subcaption}
 \usetikzlibrary{backgrounds,fit,decorations.pathreplacing,quotes,angles}
-
+\usetheme{Warsaw}
 % \makeindex[options=-s lou3.ist]
 % \indexsetup{level=\chapter*,firstpagestyle=chapter}
 
@@ -41,12 +42,40 @@
 \newcommand{\mat}[1]{\mathbf{#1}}
 \newcommand{\newterm}[1]{\emph{#1}}
 
+
+
+
+\newcommand{\V}[1]{\mathbf{#1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\HH}{\mathcal{H}}
+
+
+\newcommand{\PTr}[2]{\mathrm{Tr}_{#1}\left(#2\right)}
+\newcommand{\eig}[1]{\mathrm{eig}\left(#1\right)}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{\tiny #1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\newcommand{\source}[1]{\blfootnote{Source: #1}}
+\newcommand{\nologo}{\setbeamertemplate<presentation>{logo}{}}
+\newcommand{\footlogos}{\setbeamertemplate{footline}{}}
+
+\setbeamertemplate{navigation symbols}{}
+
+
 \title{}
 \author{}
 \begin{document}
-\begin{frame}[allowframebreaks]{Podstawy matematyczne}
-	\include{ch_podstawy_mat}
-\end{frame}
+\include{ch_podstawy_mat}
 % \include{ch_mechkw}
 % \include{ch_infkw}
+
+% \include{lecture_3_qml}
+
+
+
 \end{document}

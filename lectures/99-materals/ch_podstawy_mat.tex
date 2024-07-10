@@ -1,52 +1,35 @@
 % LTeX: language=pl-PL
-\lecture{Podstawy matematyczne}\label{ch:podstawy}
-\section{Liczby zespolone}
-Czy~widział ktoś kiedyś liczbę? Na~przykład takie czterdzieści
-dwa\footnote{Zobacz: Douglas Adams, ,,Autostopem przez~Galaktykę''.}? Czy można ją
-zobaczyć? Możemy zobaczyć reprezentację liczby czterdzieści dwa w~postaci zapisu
-dziesiętnego
-\begin{quotation}
-	\centering 42\index{forty two},
-\end{quotation}
-lub~binarnego
-\begin{quotation}
-	\centering 101010,
-\end{quotation}
-możemy też~zobaczyć czterdzieści dwa obiekty -- na~przykład ręczniki.
-Jednak samej liczby zobaczyć nie~możemy, bo jest ona pojęciem abstrakcyjnym, które
-istnieje niezależnie od~reprezentacji czy~interpretacji. Liczba czterdzieści dwa
-jest liczbą naturalną. Tak samo jest z~liczbami wymiernymi i~rzeczywistymi ---
-nie~możemy ich zobaczyć, dotknąć czy~powąchać; jednakże możemy na~nich działać.
-
-Powyższe wprowadzenie ma Cię przekonać, że~liczby zespolone, o~których zaraz
-będzie mowa, nie~są straszniejsze, dziwaczniejsze czy~bardziej abstrakcyjne
-niż~liczby naturalne, całkowite, wymierne czy~rzeczywiste.
-Dla~matematyka liczby są pewnymi obiektami, które mają pewną (mniej lub~bardziej elegancką)
-strukturę matematyczną, między którymi istnieją relacje i~na~których można wykonywać pewne działania.
-Dla~fizyka czy~inżyniera natomiast liczby służą do~opisu rzeczywistości:
-naturalne -- do~zliczania obiektów, wymierne -- do~opisu stosunków między licznościami,
-rzeczywiste -- do~mierzenia czasu, odległości, siły, a~zespolone -- do~opisywania prądu zmiennego,
-fal lub~mechaniki kwantowej. Liczby zespolone stosowane są często tam, gdzie~mamy do~czynienia
-z~obrotami lub~cyklicznie zmieniającymi~się wartościami.
-
-Przejdźmy zatem do~rzeczy: zdefiniujmy liczby zespolone i~działania, jakie można
-na~nich wykonywać.
-Na~początek wprowadźmy jednostkę urojoną: ,,$\i$'', czyli~taką liczbę, dla której $\i^2=-1$.
-Teraz możemy powiedzieć, że~\newterm{liczbą zespoloną}\index{liczba zespolona}
-możemy nazwać dowolną liczbę $z$ taką, że
+\mode*
+\lecture{Podstawy matematyczne}{ch:podstawy}
+\section{Podstawy matematyczne}
+\subsection{Liczby zespolone}
+\mode<article>{
+Zdefiniujmy liczby zespolone i~działania, jakie można na~nich wykonywać.
+Na~początek wprowadźmy jednostkę urojoną: ,,$\i$'', czyli~taką liczbę, dla
+której $\i^2=-1$. Teraz możemy powiedzieć, że~\newterm{liczbą
+zespoloną}\index{liczba zespolona} możemy nazwać dowolną liczbę $z$ taką, że
+}
 $$
-	z = a + b \i,
+z = a + b \i,
 $$
 gdzie $a$ i~$b$ są liczbami rzeczywistymi. Samą liczbę $a$ nazywamy
-\newterm{częścią
-	rzeczywistą}\index{liczba zespolona!część rzeczywista} $z$ i~oznaczamy ją przez~$\Re z$,
-a~$b$ nazywamy \newterm{częścią urojoną} \index{liczba zespolona!część urojona}
-liczby $z$ i~oznaczamy przez~$\Im z$.
-Zbiór liczb zespolonych oznacza~się przez~$\Complex$. Oznaczamy, że~$z$ należy do~zbioru~$\Complex$
--- albo~inaczej: że~jest liczbą zespoloną -- pisząc $z\in\Complex$.
+\newterm{częścią rzeczywistą}\index{liczba zespolona!część rzeczywista} $z$
+i~oznaczamy ją przez~$\Re z$, a~$b$ nazywamy \newterm{częścią urojoną}
+\index{liczba zespolona!część urojona} liczby $z$ i~oznaczamy przez~$\Im z$.
+Zbiór liczb zespolonych oznacza~się przez~$\Complex$. Oznaczamy, że~$z$ należy
+do~zbioru~$\Complex$ -- albo~inaczej: że~jest liczbą zespoloną -- pisząc
+$z\in\Complex$.
+
+\frame{\frametitle{Lizba zespolona}
+	$$
+	z = a + b \i,
+	$$
+}
+
 
 Liczby zespolone przedstawia~się na~tzw.~płaszczyźnie zespolonej, na~której
-na~osi poziomej odkłada~się wartość części rzeczywistej, a~na~osi pionowej -- wartość części urojonej.
+na~osi poziomej odkłada~się wartość części rzeczywistej, a~na~osi pionowej --
+wartość części urojonej.
 
 \subsubsection{Moduł i~argument liczby zespolonej}
 W~przypadku liczby zespolonej możemy mówić o~dwóch jej własnościach: module i~argumencie.
@@ -91,7 +74,7 @@ a~argument -- \newterm{fazą}\index{liczba zespolona!faza}.
 
 \begin{figure}[h]
 	\centering
-	\resizebox{2in}{!}{
+	\resizebox{2in}{!}{%
 		\begin{tikzpicture}
 			\begin{scope}[thick,font=\normalsize]
 				\draw
@@ -132,91 +115,92 @@ Sprzężenie geometrycznie może być rozumiane jako odbicie symetryczne liczby 
 Dodawanie i~odejmowanie liczb zespolonych przeprowadza~się w~sposób naturalny, tzn.
 jeśli~dodajemy dwie liczby zespolone $z_1 = a_1 + b_1 \i$ oraz~$z_2 = a_2 + b_2 \i$, to
 ich suma wynosi
-$
-	z_1 + z_2 = (a_1 + a_2) + (b_1 + b_2) \i,
-$
+$z_1 + z_2 = (a_1 + a_2) + (b_1 + b_2) \i,$
 a~ich różnica
-$
-	z_1 - z_2 = (a_1 - a_2) + (b_1 - b_2) \i.
-$
+$z_1 - z_2 = (a_1 - a_2) + (b_1 - b_2) \i.$
 Geometryczna interpretacja dodawania
 liczb zespolonych jest podana na~Rysunku~\ref{rys:dodawaniezespolonych}.
 
-\begin{figure}[b]
+\begin{figure}
 	\centering
-	[Dodawanie liczb zespolonych $z_1 = 2 + 1\i$ oraz $z_2 = 1 + \frac{3}{2}\i$.\label{rys:dodawaniezespolonych}]%
-	{
-		\resizebox{0.46\textwidth}{!}{
-			\centering
-			\begin{tikzpicture}
-				\begin{scope}[thick,font=\normalsize]
+	\begin{subfigure}{0.46\textwidth}
+		{
+			\resizebox{\textwidth}{!}{
+				\centering
+				\begin{tikzpicture}
+					\begin{scope}[thick,font=\normalsize]
 
-					\draw [->] (-1.1,0) -- (5,0) node [below]  {$\Re$};
-					\draw [->] (0,-1.1) -- (0,5) node [below right] {$\Im$};
+						\draw [->] (-1.1,0) -- (5,0) node [below]  {$\Re$};
+						\draw [->] (0,-1.1) -- (0,5) node [below right] {$\Im$};
 
 
-					\draw [->] (0,0) -- (2,1) node [right]  {$z_1$};
-					\draw [->] (0,0) -- (1,1.5) node [above]  {$z_2$};
+						\draw [->] (0,0) -- (2,1) node [right]  {$z_1$};
+						\draw [->] (0,0) -- (1,1.5) node [above]  {$z_2$};
 
-					\draw  [dashed] (2,1) -- (3,2.5) ;
-					\draw [->] (0,0) -- (3,2.5) node [above]  {$z_1+z_2$};
+						\draw  [dashed] (2,1) -- (3,2.5) ;
+						\draw [->] (0,0) -- (3,2.5) node [above]  {$z_1+z_2$};
 
-					\foreach \n in {-1,...,-1,1,2,...,4}{%
-							\draw (\n,-3pt) -- (\n,3pt)   node [below=5pt] {$\n$};
-							\draw (-3pt,\n) -- (3pt,\n)   node [left=1ex] {$\n \i$};
-						}
-				\end{scope}
-			\end{tikzpicture}
+						\foreach \n in {-1,...,-1,1,2,...,4}{%
+								\draw (\n,-3pt) -- (\n,3pt)   node [below=5pt] {$\n$};
+								\draw (-3pt,\n) -- (3pt,\n)   node [left=1ex] {$\n \i$};
+							}
+					\end{scope}
+				\end{tikzpicture}
+			}
 		}
-	}\hfill
-	[Mnożenie liczb zespolonych $z_1 = 3 + \frac{1}{2}\i$ oraz~$z_2 = 1 + 1\i$. Aby~uzyskać ich iloczyn, musimy pomnożyć amplitudy i~dodać fazy.\label{rys:mnożeniezespolonych}]%
-	{
-		\resizebox{0.46\textwidth}{!}{
-			\centering
-			\begin{tikzpicture}
-				\begin{scope}[thick,font=\normalsize]
+	\caption{Dodawanie liczb zespolonych $z_1 = 2 + 1\i$ oraz $z_2 = 1 + \frac{3}{2}\i$.}\label{rys:dodawaniezespolonych}
+	\end{subfigure}
+	\begin{subfigure}{0.46\textwidth}
+		{
+			\resizebox{\textwidth}{!}{
+				\centering
+				\begin{tikzpicture}
+					\begin{scope}[thick,font=\normalsize]
 
-					\draw
-					(3,0) coordinate (a)
-					-- (0,0) coordinate (o)
-					-- (0,0.5) coordinate (b)
-					[->] (0,0) -- (3	,0.5) coordinate (z) node[right] {$z_1$} node [above, pos=0.65]  {$\abs{z_1}$}
-					pic["$\phi_1$", draw=black, ->, angle eccentricity=1.2, angle radius=2cm]
-						{angle=a--o--z};
+						\draw
+						(3,0) coordinate (a)
+						-- (0,0) coordinate (o)
+						-- (0,0.5) coordinate (b)
+						[->] (0,0) -- (3	,0.5) coordinate (z) node[right] {$z_1$} node [above, pos=0.65]  {$\abs{z_1}$}
+						pic["$\phi_1$", draw=black, ->, angle eccentricity=1.2, angle radius=2cm]
+							{angle=a--o--z};
 
-					\draw
-					(1,0) coordinate (a)
-					-- (0,0) coordinate (o)
-					-- (0,1) coordinate (b)
-					[->] (0,0) -- (1,1) coordinate (z) node[above right] {$z_2$} node [above=0.15, midway]  {$\abs{z_2}$}
-					pic["$\phi_2$", draw=black, ->, angle eccentricity=1.3, angle radius=1cm]
-						{angle=a--o--z};
+						\draw
+						(1,0) coordinate (a)
+						-- (0,0) coordinate (o)
+						-- (0,1) coordinate (b)
+						[->] (0,0) -- (1,1) coordinate (z) node[above right] {$z_2$} node [above=0.15, midway]  {$\abs{z_2}$}
+						pic["$\phi_2$", draw=black, ->, angle eccentricity=1.3, angle radius=1cm]
+							{angle=a--o--z};
 
-					\draw
-					(0.5,0) coordinate (a)
-					-- (0,0) coordinate (o)
-					-- (0,3) coordinate (b)
-					[->] (0,0) -- (-0.5,3) coordinate (z) node[above left] {$z_1 z_2$} node [left, midway]  {$\abs{z_1}\abs{z_2}$}
-					pic["$\phi_1 + \phi_2$", draw=black, ->, angle eccentricity=1.2, angle radius=2.7cm]
-						{angle=a--o--z};
+						\draw
+						(0.5,0) coordinate (a)
+						-- (0,0) coordinate (o)
+						-- (0,3) coordinate (b)
+						[->] (0,0) -- (-0.5,3) coordinate (z) node[above left] {$z_1 z_2$} node [left, midway]  {$\abs{z_1}\abs{z_2}$}
+						pic["$\phi_1 + \phi_2$", draw=black, ->, angle eccentricity=1.2, angle radius=2.7cm]
+							{angle=a--o--z};
 
-					\draw [->] (-1.1,0) -- (5,0) node [below]  {$\Re$};
-					\draw [->] (0,-1.1) -- (0,5) node [below right] {$\Im$};
+						\draw [->] (-1.1,0) -- (5,0) node [below]  {$\Re$};
+						\draw [->] (0,-1.1) -- (0,5) node [below right] {$\Im$};
 
-					\foreach \n in {-1,...,-1,1,2,...,4}{
-							\draw (\n,-3pt) -- (\n,3pt)   node [below=5pt] {$\n$};
-						}
-					\foreach \n in {-1,...,-1,1,2,...,3}{
-							\draw (-3pt,\n) -- (3pt,\n) ;
-						}
-					\foreach \n in {4}{
-							\draw (-3pt,\n) -- (3pt,\n)   node [left=1ex] {$\n \i$};
-						}
+						\foreach \n in {-1,...,-1,1,2,...,4}{
+								\draw (\n,-3pt) -- (\n,3pt)   node [below=5pt] {$\n$};
+							}
+						\foreach \n in {-1,...,-1,1,2,...,3}{
+								\draw (-3pt,\n) -- (3pt,\n) ;
+							}
+						\foreach \n in {4}{
+								\draw (-3pt,\n) -- (3pt,\n)   node [left=1ex] {$\n \i$};
+							}
 
-				\end{scope}
-			\end{tikzpicture}
+					\end{scope}
+				\end{tikzpicture}
+			}
 		}
-	}
+		\caption{Mnożenie liczb zespolonych $z_1 = 3 + \frac{1}{2}\i$ oraz~$z_2 = 1 + 1\i$. Aby~uzyskać ich iloczyn, musimy pomnożyć amplitudy i~dodać fazy.}
+		\label{rys:mnożeniezespolonych}
+	\end{subfigure}
 	\caption{Graficzna reprezentacja dodawania i~mnożenia liczb zespolonych}
 	\label{rys:dodawanieimnożeniezespolonych}
 \end{figure}
