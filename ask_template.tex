@@ -1,0 +1,44 @@
+\documentclass[11pt, xcolor={dvipsnames,svgnames},aspectratio=169]{beamer}
+\usepackage{lipsum}
+
+\usetheme{iitisask}
+\title[]{Tytuł}
+\date{Data}
+\author{Autor}
+
+\begin{document}
+\frame{\maketitle}
+
+\theoremstyle{plain}
+
+\section{Sekcja 1}
+\subsection{Podsekcja 1}
+\subsubsection{Podpodsekcja 1}
+
+\begin{frame}{Tytuł slajdu}
+	\framesubtitle{Podtytuł slajdu}
+	\begin{itemize}
+		\item \lipsum[1]
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Tytuł slajdu}
+	\begin{block}{Tytuł bloku}
+		\lipsum[1]
+	\end{block}
+\end{frame}
+
+\begin{frame}{Tytuł slajdu}
+	\begin{theorem}
+		$\ket{x}=[0,1]^\dagger$
+	\end{theorem}
+\end{frame}
+
+\begin{frame}{Tytuł slajdu}
+	\begin{exampleblock}{Przykład 1}
+		$\ket{x}=[0,1]^\dagger$
+	\end{exampleblock}
+\end{frame}
+
+
+\end{document}
