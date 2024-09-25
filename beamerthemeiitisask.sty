@@ -93,11 +93,19 @@
 \titlegraphic{%
 \includegraphics[align=c, height=2cm]{pics/logos/ask_logo.png}\\
 \includegraphics[align=c, height=1cm]{pics/logos/mnisw.pdf}%
-\includegraphics[align=c, height=0.8cm]{pics/logos/iitis.pdf}%
 \includegraphics[align=c, height=1cm]{pics/logos/nds.pdf}%
+\includegraphics[align=c, height=0.8cm]{pics/logos/iitis.pdf}%
 }
 \logo{\makebox[1.4cm]{\includegraphics[width=1.2cm]{pics/logos/ask_sygnet.png}}}
 \institute[IITiS PAN]{Instytut Informatyki Teoretycznej i Stosowanej Polskiej Akademii Nauk}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\nologo}{\setbeamertemplate{logo}{}}
+
+\newcommand\blfootnote[1]{%
+  \begingroup%
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup%
+}
+\newcommand{\source}[1]{\blfootnote{Źródło: #1}}
