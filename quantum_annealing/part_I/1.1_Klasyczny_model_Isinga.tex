@@ -62,14 +62,19 @@
 		  		\begin{itemize}
 		  			\item Problem obliczeniowy jest zapisywany jako pewnien system fizyczny. 
 		  			\item Obliczen dokonuje się poprzez manipulowanie systemem fizycznym
-		  			\item Przykłady: Poprzeczne pole Isinga, Atomy Rydberga
+		  			\item Przykłady: \textbf{Wyrzażanie Kwantowe}, Atomy Rydberga
 		  		\end{itemize}
 		  	\end{column}
 		  \end{columns}
 	\end{frame}
 	
-	\begin{frame}
-		content...
+	\begin{frame}{Wyrzażanie kwantowe}
+		
+		\begin{itemize}
+			\item Podobne do algorytmu symulowanego wyżarzania (zamiast temperatury działamy "kwantowością")
+			\item Zaimplementowane za pomocą modelu Isinga
+		\end{itemize}
+		
 	\end{frame}
 
 	\section{Klasyczny model Isinga}
@@ -77,13 +82,18 @@
 	\begin{frame}
 		Fizyczny system za pomocą ktorego zapisujemy problemy obliczeniowe
 		
-		Opisuje system "spinów", tj. obiektow, ktore moga przyjać jeden z dwóch stanow: $\uparrow$ (numeryczna wartosc 1) lub $\downarrow$ (numeryczna wartosc -1). Matematycznie $i$-ty spin oznaczamy jako $\sigma^{z}_i$.
+		Opisuje system "spinów", tj. obiektow, ktore moga przyjać jeden z dwóch stanow: $\uparrow$ (numeryczna wartosc 1) lub $\downarrow$ (numeryczna wartosc -1).
 		
 		 
 		
 	\end{frame}
 	
 	\begin{frame}
+		Oznaczenia:
+		\begin{itemize}
+			\item $\sigma^{z}_i$ - $i$-ty spin
+			\item $h_$ - wartość obciążenia (\textit{bias}) spinu $i$
+		\end{itemize}
 		 \begin{tcolorbox}[title=Klasyczny model Isinga, colframe=margeurite]
 		 	\begin{equation*}
 		 		E(\bm{\sigma}) = \sum\limits_{<i,j> \in \mathcal{E}} J_{i,j} \sigma^z_i \sigma^z_j + \sum\limits_i^N h_i \sigma^z_i
