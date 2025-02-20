@@ -38,12 +38,12 @@ __global__ void cumpute_energies(float Q[N][N], int sweep_size, float* energies,
 		}
 
 		for (int i = 0; i <= N; i++){
-			if (binary[i]){
+			if (binary[i] == 1){
 				en = en + sQ[i][i];
 				for (int j = i; j <= N; j++){
-					if (binary[j]){
-						en = en + sQ[i][j];
-					}
+
+					en = en + sQ[i][j] * binary[j];
+
 				}
 			}
 		}
