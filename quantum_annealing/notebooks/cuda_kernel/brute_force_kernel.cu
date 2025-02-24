@@ -37,16 +37,16 @@ __global__ void cumpute_energies(float Q[N][N], int sweep_size, float* energies,
 			binary[i] = (state_code >> i) & 1;
 		}
 
-		for (int i = 0; i <= N; i++){
-			if (binary[i] == 1){
-				en = en + sQ[i][i];
-				for (int j = i; j <= N; j++){
+		// for (int i = 0; i <= N; i++){
+		// 	if (binary[i] == 1){
+		// 		en = en + sQ[i][i];
+		// 		for (int j = i; j <= N; j++){
 
-					en = en + sQ[i][j] * binary[j];
+		// 			en = en + sQ[i][j] * binary[j];
 
-				}
-			}
-		}
+		// 		}
+		// 	}
+		// }
 		states[idx] = state_code;
 		energies[idx] = en;
 	}

@@ -85,3 +85,5 @@ __global__ void update_y(){
 
     }
 }
+
+
