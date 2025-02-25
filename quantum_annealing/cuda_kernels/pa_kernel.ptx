@@ -48,7 +48,7 @@
 
 	mov.u32 	%r5, %ctaid.x;
 	cvta.to.global.u64 	%rd9, %rd4;
-	mul.wide.s32 	%rd10, %r1, 32;
+	mul.wide.s32 	%rd10, %r1, 256;
 	add.s64 	%rd11, %rd9, %rd10;
 	mul.wide.s32 	%rd12, %r5, 4;
 	add.s64 	%rd13, %rd11, %rd12;

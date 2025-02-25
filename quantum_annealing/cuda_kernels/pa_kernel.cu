@@ -1,5 +1,5 @@
 #define N 216  // ilość spinow
-#define M 2^10  // ilość trajektorii
+#define M 64  // ilość trajektorii
 
 // Pełen pegaz
 // #define N 5400  // ilość spinow
