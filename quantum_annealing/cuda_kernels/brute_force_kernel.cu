@@ -42,7 +42,7 @@ __global__ void compute_energies(float Q[N][N], int sweep_size_exponent, float* 
 		for (int i = 0; i < N; i++){
 			if (binary[i] == 1){
 				en = en + sQ[i][i];
-				for (int j = i + 1; j < 5; j++){
+				for (int j = i + 1; j < N; j++){
 
 					en = en + sQ[i][j] * binary[j];
 
