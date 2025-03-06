@@ -1,0 +1,82 @@
+# funkcje pomocniczne
+
+import os
+
+import pandas as pd
+import numpy as np
+import cupy as cp
+
+from dimod import BinaryQuadraticModel
+from  collections import namedtuple
+
+pegasus = namedtuple("pegasus", ["path", "best_energy"])
+small_pegasus = pegasus(os.path.join("instancje", "Pegasus", "P2_CBFM-P.txt"), -39.0)
+test_pegasus = pegasus(os.path.join("instancje", "Pegasus", "P4_CBFM-P.txt"), -469.0)  # E = -469.0
+full_pegasus = pegasus(os.path.join("instancje", "Pegasus", "P16_CBFM-P.txt"), -12772.0)  # E = -12772.0
+
+
+def read_instance(path: os.PathLike, convention: str = "dwave"):
+    df = pd.read_csv(path, sep=" ", header=None, comment="#", names=["i", "j", "value"])
+
+    n = max(df[["i", "j"]].max())
+    h = np.zeros(n)
+    J = np.zeros((n, n))
+    
+    for row in df.itertuples():
+        if row.i == row.j:
+            h[row.i - 1] = row.value
+        elif row.i > row.j:
+            J[row.j - 1, row.i - 1] = row.value  # by zachować górnotrójkątność
+        else:
+            J[row.i - 1, row.j - 1] = row.value
+    if convention == "dwave":
+        return J, h
+    elif convention == "minus_half":
+        return dwave_conv_to_minus_half_convention(J, h)
+
+
+def dwave_conv_to_minus_half_convention(J: np.ndarray, h: np.ndarray):
+    n = len(h)
+    herminian_matrix = np.zeros((n, n))
+
+    # de facto wyciągamy -1/2 przed macierz i zamieniamy ją na hermitowską
+    for i in range(n):
+        for j in range(i + 1, n):
+            J_ij = J[i, j]
+            herminian_matrix[i, j] = -J_ij
+            herminian_matrix[j, i] = -J_ij
+
+    x = np.random.choice([-1, 1], size=n)
+    assert np.array_equal(-2 * x @ J @ x.T, x @ herminian_matrix @ x.T)
+    assert np.array_equal(herminian_matrix.T, herminian_matrix)  # wszystkie macierze są rzeczywiste
+
+    new_external_fields = -1 * h
+    return herminian_matrix, new_external_fields
+
+
+def ising_to_qubo(J, h):
+    bqm = BinaryQuadraticModel(h, J, vartype="SPIN")
+    qubo, offset = bqm.to_qubo()
+    N = bqm.num_variables
+    Q = np.zeros((N, N))
+    for (i, j), v in qubo.items():
+        if i == j:
+            Q[i, i] = v
+        elif i > j:
+            Q[j, i] = v
+        else:
+            Q[i, j] = v 
+    return Q, offset
+
+
+def calculate_energy(J: np.ndarray, h: np.ndarray, state: np.ndarray):
+    return -1/2 * state @ J @ state.T - state @ h 
+
+
+def calculate_energy_gpu(J: cp.ndarray, h: cp.ndarray, state: cp.ndarray):
+    # Zakładamy, że J jest hermitowska z czynnikiem 1/2
+    n, _ = J.shape
+    A = cp.multiply(-1/2, J)
+    B = cp.matmul(A, state) - h.reshape(n, 1)
+    C = cp.multiply(state, B)
+    return cp.sum(C, axis=0)

@@ -1,4 +1,4 @@
-#define N 216  // ilość spinow
+#define N 24  // ilość spinow
 #define M 64  // ilość trajektorii
 
 // Pełen pegaz

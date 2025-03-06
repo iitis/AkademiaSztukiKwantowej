@@ -1,7 +1,7 @@
 #include <thrust/sort.h>
 #include <thrust/functional.h>
 
-#define N 20 // ilość spinów
+#define N 24 // ilość spinów
 
 extern "C" {
 
