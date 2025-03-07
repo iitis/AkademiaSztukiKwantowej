@@ -76,6 +76,14 @@ def calculate_energy(J: np.ndarray, h: np.ndarray, state: np.ndarray, convention
         return state @ J @ state.T + state @ h 
 
 
+def calculate_energy_matrix(J: np.ndarray, h: np.ndarray, state: np.ndarray):
+    n, _ = J.shape
+    A = np.multiply(-1/2, J)
+    B = np.matmul(A, state) - h.reshape(n, 1)
+    C = np.multiply(state, B)
+    return np.sum(C, axis=0)
+
+
 def calculate_energy_gpu(J: cp.ndarray, h: cp.ndarray, state: cp.ndarray):
     # Zakładamy, że J jest hermitowska z czynnikiem 1/2
     n, _ = J.shape
