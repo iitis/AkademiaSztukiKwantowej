@@ -69,8 +69,11 @@ def ising_to_qubo(J, h):
     return Q, offset
 
 
-def calculate_energy(J: np.ndarray, h: np.ndarray, state: np.ndarray):
-    return -1/2 * state @ J @ state.T - state @ h 
+def calculate_energy(J: np.ndarray, h: np.ndarray, state: np.ndarray, convention: str = "minus_half"):
+    if convention == "minus_half":
+        return -1/2 * state @ J @ state.T - state @ h 
+    elif convention == "dwave":
+        return state @ J @ state.T + state @ h 
 
 
 def calculate_energy_gpu(J: cp.ndarray, h: cp.ndarray, state: cp.ndarray):
