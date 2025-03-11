@@ -15,7 +15,7 @@ test_pegasus = pegasus(os.path.join("instancje", "Pegasus", "P4_CBFM-P.txt"), -4
 full_pegasus = pegasus(os.path.join("instancje", "Pegasus", "P16_CBFM-P.txt"), -12772.0)  # E = -12772.0
 
 
-def read_instance(path: os.PathLike, convention: str = "dwave"):
+def read_instance(path: os.PathLike, convention: str = "minus_half"):
     df = pd.read_csv(path, sep=" ", header=None, comment="#", names=["i", "j", "value"])
 
     n = max(df[["i", "j"]].max())
