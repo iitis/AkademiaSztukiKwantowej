@@ -15,6 +15,12 @@ test_pegasus = pegasus(os.path.join("instancje", "Pegasus", "P4_CBFM-P.txt"), -4
 full_pegasus = pegasus(os.path.join("instancje", "Pegasus", "P16_CBFM-P.txt"), -12772.0)  # E = -12772.0
 
 
+energies = [-469.0, -492.0, -460.0, -495.0, -471.0, -460.0, -486.0, -490.0, -477.0, -478.0]
+
+pegasus_benchmark = [pegasus(os.path.join("instancje", "Pegasus", "benchmark", f"{i+1}".zfill(3) + "_sg.txt"), energies[i])
+                     for i in range(10)]
+
+
 def read_instance(path: os.PathLike, convention: str = "minus_half"):
     df = pd.read_csv(path, sep=" ", header=None, comment="#", names=["i", "j", "value"])
 
@@ -33,6 +39,10 @@ def read_instance(path: os.PathLike, convention: str = "minus_half"):
         return J, h
     elif convention == "minus_half":
         return dwave_conv_to_minus_half_convention(J, h)
+    elif convention == "minus_half_plus_h":
+        return dwave_conv_to_minus_half_convention(J, -h)
+    else:
+        raise ValueError("Wrong convention")
 
 
 def dwave_conv_to_minus_half_convention(J: np.ndarray, h: np.ndarray):

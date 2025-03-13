@@ -124,13 +124,10 @@ def brute_force_gpu(Q,  num_states: int, sweep_size_exponent: int = 10):
     return sort_by_key(final_energies, final_states, num_states)
 
 
-def wall_gpu(x:cp.ndarray, y:cp.ndarray):
-    n, m = x.shape
-    for i in range(n):
-        for j in range(m):
-            if abs(x[i, j]) > 1:
-                x[i, j] = cp.sign(x[i, j])
-                y[i, j] = 0
+def wall_gpu(x: cp.ndarray, y: cp.ndarray):
+    mask = cp.abs(x) > 1
+    x[mask] = cp.sign(x[mask])
+    y[mask] = 0
     return x, y
 
 
@@ -153,12 +150,12 @@ def balistic_simulated_bifurcation_gpu_naive(J, h, num_steps, time_step, num_tra
     y = cp.random.uniform(-0.1, 0.1, (N, num_trajectories))
 
     for t in tqdm(range(num_steps), desc="symulowana bifurkacja"):
-        y += (-1 * (a_0 - a[t]) * x + c_0 * cp.matmul(J,x)) * time_step  # x(t)
+        y += (-1 * (a_0 - a[t]) * x + c_0 * (cp.matmul(J,x)) + h.reshape((N, 1))) * time_step  # x(t)
         x += a_0 * y * time_step # x(t + 1)
 
         x, y = wall_gpu(x, y)
 
-    x = np.sign(x)
+    x = cp.sign(x)
     return x, calculate_energy_gpu(J, h, x)
 
 
@@ -232,12 +229,12 @@ def discrete_simulated_bifurcation_gpu_naive(J, h, num_steps, time_step, num_tra
     y = cp.random.uniform(-0.1, 0.1, (N, num_trajectories))
 
     for t in tqdm(range(num_steps), desc="symulowana bifurkacja"):
-        y += (-1 * (a_0 - a[t]) * x + c_0 * cp.matmul(J,cp.sign(x))) * time_step  # x(t)
+        y += (-1 * (a_0 - a[t]) * x + c_0 * (cp.matmul(J,cp.sign(x)) + h.reshape((N, 1)))) * time_step  # x(t)
         x += a_0 * y * time_step # x(t + 1)
 
         x, y = wall_gpu(x, y)
 
-    x = np.sign(x)
+    x = cp.sign(x)
     return x, calculate_energy_gpu(J, h, x)
 
 
