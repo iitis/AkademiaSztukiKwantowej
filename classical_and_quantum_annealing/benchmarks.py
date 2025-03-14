@@ -7,14 +7,10 @@ from tqdm import tqdm
 
 from funkcje_pomocnicze import calculate_energy_matrix, calculate_energy_gpu
 
-#TODO: Napisać efektywniej
-def wall(x:np.ndarray, y:np.ndarray):
-    n, m = x.shape
-    for i in range(n):
-        for j in range(m):
-            if abs(x[i, j]) > 1:
-                x[i, j] = np.sign(x[i, j])
-                y[i, j] = 0
+def wall(x: np.ndarray, y: np.ndarray):
+    mask = np.abs(x) > 1
+    x[mask] = np.sign(x[mask])
+    y[mask] = 0
     return x, y
 
 

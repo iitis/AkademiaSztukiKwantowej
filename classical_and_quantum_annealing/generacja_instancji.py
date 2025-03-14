@@ -5,10 +5,10 @@ import numpy as np
 import dwave_networkx as dnx
 
 
-
+cwd = os.getcwd()
 rng = np.random.default_rng()
-P = 2
-save_path = os.path.join("instancje", "Pegasus", f"P{P}_CBFM-P.txt")
+P = 12
+save_path = os.path.join(cwd, "instancje", "Pegasus", f"P{P}_CBFM-P.txt")
 
 graph = dnx.pegasus_graph(P, nice_coordinates=True)
 
