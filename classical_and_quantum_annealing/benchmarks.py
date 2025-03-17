@@ -1,9 +1,10 @@
 import numpy as np
 import cupy as cp
 
-from math import sqrt
+from math import sqrt, inf
 from typing import Optional
 from tqdm import tqdm
+from itertools import product
 
 from funkcje_pomocnicze import calculate_energy_matrix, calculate_energy_gpu
 
@@ -284,3 +285,25 @@ def discrete_simulated_bifurcation_gpu(J, h, num_steps, time_step, num_trajector
 
     x = cp.sign(x)
     return x, calculate_energy_gpu(J, h, x)
+
+
+def calculate_energy(J: np.ndarray, h: np.ndarray, state: np.ndarray, convention: str = "minus_half"):
+    if convention == "minus_half":
+        return -1/2 * state @ J @ state.T - state @ h 
+    elif convention == "dwave":
+        return state @ J @ state.T + state @ h 
+    
+
+def brute_force_naive(J, h):
+    best_energy = inf
+    best_state = None
+    n = len(h)
+
+    for state in tqdm(product([-1, 1], repeat=n), desc="Wyczerpujące przeszukiwanie", total=2**n):
+        state = np.array(state)
+        energy = calculate_energy(J, h, state, convention="dwave")
+        if energy < best_energy:
+            best_energy = energy
+            best_state = state
+
+    return best_state, best_energy

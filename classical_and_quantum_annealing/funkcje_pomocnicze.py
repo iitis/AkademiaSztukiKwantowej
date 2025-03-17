@@ -9,16 +9,10 @@ import cupy as cp
 from dimod import BinaryQuadraticModel
 from  collections import namedtuple
 
-pegasus = namedtuple("pegasus", ["path", "best_energy"])
-small_pegasus = pegasus(os.path.join("instancje", "Pegasus", "P2_CBFM-P.txt"), -39.0)
-test_pegasus = pegasus(os.path.join("instancje", "Pegasus", "P4_CBFM-P.txt"), -469.0)  # E = -469.0
-full_pegasus = pegasus(os.path.join("instancje", "Pegasus", "P16_CBFM-P.txt"), -12772.0)  # E = -12772.0
-
-
-energies = [-469.0, -492.0, -460.0, -495.0, -471.0, -460.0, -486.0, -490.0, -477.0, -478.0]
-
-pegasus_benchmark = [pegasus(os.path.join("instancje", "Pegasus", "benchmark", f"{i+1}".zfill(3) + "_sg.txt"), energies[i])
-                     for i in range(10)]
+instance = namedtuple("instance", ["path", "best_energy"])
+small_pegasus = instance(os.path.join("instancje", "Pegasus", "P2_CBFM-P.txt"), -39.0)
+test_pegasus = instance(os.path.join("instancje", "Pegasus", "P4_CBFM-P.txt"), -469.0)  # E = -469.0
+full_pegasus = instance(os.path.join("instancje", "Pegasus", "P16_CBFM-P.txt"), -12772.0)  # E = -12772.0
 
 
 def read_instance(path: os.PathLike, convention: str = "minus_half"):
@@ -101,3 +95,4 @@ def calculate_energy_gpu(J: cp.ndarray, h: cp.ndarray, state: cp.ndarray):
     B = cp.matmul(A, state) - h.reshape(n, 1)
     C = cp.multiply(state, B)
     return cp.sum(C, axis=0)
+
