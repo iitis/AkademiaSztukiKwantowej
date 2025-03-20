@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import cupy as cp
 
@@ -6,7 +7,25 @@ from typing import Optional
 from tqdm import tqdm
 from itertools import product
 
-from funkcje_pomocnicze import calculate_energy_matrix, calculate_energy_gpu
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def calculate_energy_matrix(J: np.ndarray, h: np.ndarray, state: np.ndarray):
+    n, _ = J.shape
+    A = np.multiply(-1/2, J)
+    B = np.matmul(A, state) - h.reshape(n, 1)
+    C = np.multiply(state, B)
+    return np.sum(C, axis=0)
+
+
+def calculate_energy_gpu(J: cp.ndarray, h: cp.ndarray, state: cp.ndarray):
+    # Zakładamy, że J jest hermitowska z czynnikiem 1/2
+    n, _ = J.shape
+    A = cp.multiply(-1/2, J)
+    B = cp.matmul(A, state) - h.reshape(n, 1)
+    C = cp.multiply(state, B)
+    return cp.sum(C, axis=0)
 
 def wall(x: np.ndarray, y: np.ndarray):
     mask = np.abs(x) > 1
@@ -94,7 +113,7 @@ def brute_force_gpu(Q,  num_states: int, sweep_size_exponent: int = 10, threadsp
     num_chunks = 2**(N-sweep_size_exponent)
 
    
-    brute_force_kernel = cp.RawModule(path="cuda_kernels/brute_force_kernel.ptx")
+    brute_force_kernel = cp.RawModule(path=os.path.join(ROOT, "cuda_kernels", "brute_force_kernel.ptx"))
     compute_energies = brute_force_kernel.get_function("compute_energies")
 
     blockspergrid = sweep_size//threadsperblock
@@ -186,7 +205,7 @@ def balistic_simulated_bifurcation_gpu(J, h, num_steps, time_step, num_trajector
     blockspergrid_y = (N + threadsperblock - 1) // threadsperblock  # wystarczająca ilość bloków by pomieścić całą kolumnę 
     blockspergrid = (blockspergrid_x, blockspergrid_y)
     
-    kernel = cp.RawModule(path="cuda_kernels/sbm_kernel.ptx")
+    kernel = cp.RawModule(path=os.path.join(ROOT, "cuda_kernels", "sbm_kernel.ptx"))
     update_y = kernel.get_function("update_y")
     update_x_and_wall = kernel.get_function("update_x_and_wall")
 
@@ -265,7 +284,7 @@ def discrete_simulated_bifurcation_gpu(J, h, num_steps, time_step, num_trajector
     blockspergrid_y = (N + threadsperblock - 1) // threadsperblock  # wystarczająca ilość bloków by pomieścić całą kolumnę 
     blockspergrid = (blockspergrid_x, blockspergrid_y)
     
-    kernel = cp.RawModule(path="cuda_kernels/sbm_kernel.ptx")
+    kernel = cp.RawModule(path=os.path.join(ROOT, "cuda_kernels", "sbm_kernel.ptx"))
     update_y = kernel.get_function("update_y")
     update_x_and_wall = kernel.get_function("update_x_and_wall")
 
