@@ -35,14 +35,14 @@ C2 = instance(os.path.join(ROOT, "instancje", "Chimera", "C2_random.txt"), -37.2
 C4 = instance(os.path.join(ROOT, "instancje", "Chimera", "C4_random.txt"), -150.0, "C4")
 C8 = instance(os.path.join(ROOT, "instancje", "Chimera", "C8_random.txt"), -642.5, "C8")
 C12 = instance(os.path.join(ROOT, "instancje", "Chimera", "C12_random.txt"), -1417.75, "C12")
-C16 = instance(os.path.join(ROOT, "instancje", "Chimera", "C16_random.txt"), -2547.0, "C16")
+C16 = instance(os.path.join(ROOT, "instancje", "Chimera", "C16_random.txt"), -2551.0, "C16")
 
-Z2 = instance(os.path.join(ROOT, "instancje", "Zephyr", "Z2_random.txt"), 0, "Z2")
-Z4 = instance(os.path.join(ROOT, "instancje", "Zephyr", "Z4_random.txt"), 0, "Z4")
-Z8 = instance(os.path.join(ROOT, "instancje", "Zephyr", "Z8_random.txt"), 0, "Z8")
-Z12 = instance(os.path.join(ROOT, "instancje", "Zephyr", "Z12_random.txt"), 0, "Z12")
-Z16 = instance(os.path.join(ROOT, "instancje", "Zephyr", "Z16_random.txt"), 0, "Z16") 
+Z2 = instance(os.path.join(ROOT, "instancje", "Zephyr", "Z2_random.txt"), -310.75, "Z2")
+Z4 = instance(os.path.join(ROOT, "instancje", "Zephyr", "Z4_random.txt"), -1184.75, "Z4")
+Z8 = instance(os.path.join(ROOT, "instancje", "Zephyr", "Z8_random.txt"), -4697.5, "Z8")
+Z12 = instance(os.path.join(ROOT, "instancje", "Zephyr", "Z12_random.txt"), -10289.0, "Z12")
+Z15 = instance(os.path.join(ROOT, "instancje", "Zephyr", "Z15_random.txt"), -16087.5, "Z15") 
 
 pegasus_data = [P2, P4, P8, P12, P16]
 chimera_data = [C2, C4, C8, C12, C16]
-zephyr_data = [Z2, Z4, Z8, Z12, Z16]
+zephyr_data = [Z2, Z4, Z8, Z12, Z15]

@@ -51,7 +51,7 @@ def dwave_conv_to_minus_half_convention(J: np.ndarray, h: np.ndarray):
             herminian_matrix[j, i] = -J_ij
 
     x = np.random.choice([-1, 1], size=n)
-    assert np.array_equal(-2 * x @ J @ x.T, x @ herminian_matrix @ x.T)
+    assert np.allclose(-2 * x @ J @ x.T, x @ herminian_matrix @ x.T)
     assert np.array_equal(herminian_matrix.T, herminian_matrix)  # wszystkie macierze są rzeczywiste
 
     new_external_fields = -1 * h
