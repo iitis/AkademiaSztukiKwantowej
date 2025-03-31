@@ -9,10 +9,20 @@ import cupy as cp
 from dimod import BinaryQuadraticModel
 from  collections import namedtuple
 
-instance = namedtuple("instance", ["path", "best_energy"])
-small_pegasus = instance(os.path.join("instancje", "Pegasus", "P2_CBFM-P.txt"), -39.0)
-test_pegasus = instance(os.path.join("instancje", "Pegasus", "P4_CBFM-P.txt"), -469.0)  # E = -469.0
-full_pegasus = instance(os.path.join("instancje", "Pegasus", "P16_CBFM-P.txt"), -12772.0)  # E = -12772.0
+ROOT = os.path.dirname(os.path.abspath(__file__))
+
+instance = namedtuple("instance", ["path", "best_energy", "name"])
+small_pegasus = instance(os.path.join(ROOT, "instancje", "Pegasus", "P2_CBFM-P.txt"), -39.0, "P2")
+test_pegasus = instance(os.path.join(ROOT, "instancje", "Pegasus", "P4_CBFM-P.txt"), -469.0, "P4")  # E = -469.0
+full_pegasus = instance(os.path.join(ROOT, "instancje", "Pegasus", "P16_CBFM-P.txt"), -12772.0, "P16")  # E = -12772.0
+
+
+
+P2 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P2_CBFM-P.txt"), -39.0, "P2")
+P4 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P4_CBFM-P.txt"), -469.0, "P4")
+P8 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P8_CBFM-P.txt"), -2752.0, "P8")
+P12 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P12_CBFM-P.txt"), -6831.0, "P12")
+P16 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P16_CBFM-P.txt"), -12772.0, "P16")
 
 
 def read_instance(path: os.PathLike, convention: str = "minus_half"):
