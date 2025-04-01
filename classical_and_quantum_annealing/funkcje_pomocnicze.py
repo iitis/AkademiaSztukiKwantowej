@@ -15,7 +15,7 @@ instance = namedtuple("instance", ["path", "best_energy", "name"])
 small_pegasus = instance(os.path.join(ROOT, "instancje", "Pegasus", "P2_CBFM-P.txt"), -39.0, "P2")
 test_pegasus = instance(os.path.join(ROOT, "instancje", "Pegasus", "P4_CBFM-P.txt"), -469.0, "P4")  # E = -469.0
 full_pegasus = instance(os.path.join(ROOT, "instancje", "Pegasus", "P16_CBFM-P.txt"), -12772.0, "P16")  # E = -12772.0
-
+small_grid = instance(os.path.join(ROOT, "instancje", "Grid", "Grid5_random.txt"), -22.75, "Grid 5")
 
 
 P2 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P2_CBFM-P.txt"), -39.0, "P2")
@@ -23,6 +23,12 @@ P4 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P4_CBFM-P.txt"), -469.
 P8 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P8_CBFM-P.txt"), -2752.0, "P8")
 P12 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P12_CBFM-P.txt"), -6831.0, "P12")
 P16 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P16_CBFM-P.txt"), -12772.0, "P16")
+
+Grid5 = instance(os.path.join(ROOT, "instancje", "Grid", "Grid5_random.txt"), -22.75, "Grid 5")
+Grid10 = instance(os.path.join(ROOT, "instancje", "Grid", "Grid10_random.txt"), -97.25, "Grid 10")
+Grid20 = instance(os.path.join(ROOT, "instancje", "Grid", "Grid20_random.txt"), -418.25, "Grid 20")
+Grid50 = instance(os.path.join(ROOT, "instancje", "Grid", "Grid50_random.txt"), -2639.5, "Grid 50")
+Grid100 = instance(os.path.join(ROOT, "instancje", "Grid", "Grid100_random.txt"), -10548.25, "Grid 100")
 
 
 def read_instance(path: os.PathLike, convention: str = "minus_half"):
