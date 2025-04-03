@@ -20,6 +20,7 @@ small_grid = instance(os.path.join(ROOT, "instancje", "Grid", "Grid5_random.txt"
 
 P2 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P2_CBFM-P.txt"), -39.0, "P2")
 P4 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P4_CBFM-P.txt"), -469.0, "P4")
+P6 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P6_CBFM-P.txt"), -1384.0, "P6")
 P8 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P8_CBFM-P.txt"), -2752.0, "P8")
 P12 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P12_CBFM-P.txt"), -6831.0, "P12")
 P16 = instance(os.path.join(ROOT, "instancje", "Pegasus", "P16_CBFM-P.txt"), -12772.0, "P16")
@@ -96,11 +97,15 @@ def calculate_energy(J: np.ndarray, h: np.ndarray, state: np.ndarray, convention
         return state @ J @ state.T + state @ h 
 
 
-def calculate_energy_matrix(J: np.ndarray, h: np.ndarray, state: np.ndarray):
+def calculate_energy_matrix(J: np.ndarray, h: np.ndarray, state: np.ndarray, convention: str = "minus_half"):
     n, _ = J.shape
-    A = np.multiply(-1/2, J)
-    B = np.matmul(A, state) - h.reshape(n, 1)
-    C = np.multiply(state, B)
+    if convention == "minus_half":
+        A = np.multiply(-1/2, J)
+        B = np.matmul(A, state) - h.reshape(n, 1)
+        C = np.multiply(state, B)
+    elif convention == "dwave":
+        B = np.matmul(J, state) + h.reshape(n, 1)
+        C = np.multiply(state, B)
     return np.sum(C, axis=0)
 
 
