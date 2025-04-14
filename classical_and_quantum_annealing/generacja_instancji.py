@@ -63,12 +63,11 @@ def grid_to_linear(node: tuple[int, int], grid_size: int):
 
 if __name__ == "__main__":
     
-    path = os.path.join(cwd, "instancje", "Grid")
+    path = os.path.join(cwd, "instancje", "Complete")
+    graph = nx.complete_graph(8)
 
-    for C in [50]:
-    
-        graph = nx.grid_2d_graph(C, C)
+    J, h = generate_random_instance(graph, lambda x: x+1)
+    save_instance(J, h, os.path.join(path, "K8_random.txt"))
 
-        J, h = generate_random_instance(graph, grid_to_linear, C)
-        save_instance(J, h, os.path.join(path, f"Grid{C}_random.txt"))
+   
     

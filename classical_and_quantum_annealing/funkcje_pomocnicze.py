@@ -31,6 +31,8 @@ Grid20 = instance(os.path.join(ROOT, "instancje", "Grid", "Grid20_random.txt"), 
 Grid50 = instance(os.path.join(ROOT, "instancje", "Grid", "Grid50_random.txt"), -2639.5, "Grid 50")
 Grid100 = instance(os.path.join(ROOT, "instancje", "Grid", "Grid100_random.txt"), -10548.25, "Grid 100")
 
+K8 = instance(os.path.join(ROOT, "instancje", "Complete", "K8_random.txt"), -9.5, "K8")
+
 
 def read_instance(path: os.PathLike, convention: str = "minus_half"):
     df = pd.read_csv(path, sep=" ", header=None, comment="#", names=["i", "j", "value"])
@@ -54,6 +56,24 @@ def read_instance(path: os.PathLike, convention: str = "minus_half"):
         return dwave_conv_to_minus_half_convention(J, -h)
     else:
         raise ValueError("Wrong convention")
+
+
+def read_instance_dict(path: os.PathLike, convention: str = "dwave"):
+    df = pd.read_csv(path, sep=" ", header=None, comment="#", names=["i", "j", "value"])
+
+    h = {}
+    J = {}
+
+    for row in df.itertuples():
+        if row.i == row.j:
+            h[row.i - 1] = row.value
+        elif row.i > row.j:
+            J[(row.j - 1, row.i - 1)] = row.value  # by zachować górnotrójkątność
+        else:
+            J[(row.i - 1, row.j - 1)] = row.value
+    if convention == "dwave":
+        return J, h
+
 
 
 def dwave_conv_to_minus_half_convention(J: np.ndarray, h: np.ndarray):
