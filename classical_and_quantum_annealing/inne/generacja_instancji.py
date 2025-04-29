@@ -4,6 +4,7 @@ import dwave_networkx as dnx
 import networkx as nx
 
 from typing import Optional, Callable
+from dwave.system import DWaveSampler
 
 
 cwd = os.getcwd()
@@ -62,12 +63,12 @@ def grid_to_linear(node: tuple[int, int], grid_size: int):
     return x*grid_size + y + 1
 
 if __name__ == "__main__":
+    sampler = DWaveSampler(solver="Advantage_system4.1")
+    graph = sampler.to_networkx_graph()
     
-    path = os.path.join(cwd, "instancje", "Complete")
-    graph = nx.complete_graph(8)
-
     J, h = generate_random_instance(graph, lambda x: x+1)
-    save_instance(J, h, os.path.join(path, "K8_random.txt"))
+    save_instance(J, h, os.path.join("instancje", "Pegasus", "Advantage_system4.1_random.txt"))
+
 
    
     
