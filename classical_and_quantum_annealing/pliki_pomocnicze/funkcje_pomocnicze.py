@@ -9,7 +9,7 @@ import numpy as np
 from dimod import BinaryQuadraticModel
 from  collections import namedtuple
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 instance = namedtuple("instance", ["path", "best_energy", "name"])
 small_pegasus = instance(os.path.join(ROOT, "instancje", "Pegasus", "P2_CBFM-P.txt"), -39.0, "P2")
