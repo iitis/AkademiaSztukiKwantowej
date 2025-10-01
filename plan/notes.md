@@ -5,6 +5,6 @@
 5. Dodaj więcej informacji o efektywnych implementacjach, daj link do pliku benchmarkowgo - done
 6. linki do plików których omawiamy - done
 7. Podkreśl wykładniczość i że zbierzości sa w nieskończoności - done
-8. Zdefiniuj iloczyn kronekera
+8. Zdefiniuj iloczyn kronekera - done
 9. Zdefiniuj problem własny, wartości i wektory własne
-10. Dopisz równanie s i co oznacza oczekiwany pomiar
+10. Dopisz równanie s i co oznacza oczekiwany pomiar - done
