@@ -1,3 +1,10 @@
-1. Dodać wstępny opis wyczerpującego przeszukiwania do opisu w modelu isinga? Jest potem używany w pierwszych przykładach. Zostawić jako ćwiczenie dla ludzi na potem?
-2. Rozbudowac bibliografie? Dodac jakieś prace przeglądowe?
-3. Sprawdź czy na pewnop wszystko działa na różnych komputerach
+1. dodać informacje  gicie, clone, checkout
+2. markdown ogarnąć - done
+3. dopisz gradient - done
+4. Rozbuduj wzory na zamiany, zrób to ręcznie - done
+5. Dodaj więcej informacji o efektywnych implementacjach, daj link do pliku benchmarkowgo - done
+6. linki do plików których omawiamy - done
+7. Podkreśl wykładniczość i że zbierzości sa w nieskończoności - done
+8. Zdefiniuj iloczyn kronekera
+9. Zdefiniuj problem własny, wartości i wektory własne
+10. Dopisz równanie s i co oznacza oczekiwany pomiar

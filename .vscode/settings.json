@@ -1,3 +1,6 @@
 {
-    "julia.environmentPath": "/home/tsmierzchalski/AkademiaSztukiKwantowej"
+    "julia.environmentPath": "/home/tsmierzchalski/AkademiaSztukiKwantowej",
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda",
+    "python-envs.pythonProjects": []
 }
