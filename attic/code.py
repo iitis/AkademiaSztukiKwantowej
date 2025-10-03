@@ -139,3 +139,18 @@ print("x = ", best_state)
 print("R =", R)
 
 check_solution([0, 1, 0, 1, 1], U, R)
+
+
+# E = -12772
+# best found -12742 steps 10^4 trajectories 2^10 time approx 43s
+# najperw trzeba raz przepuscić by kernel wszedł do pamięci podręcznej (można użyć mało kroków)
+from funkcje_pomocnicze import read_instance, full_pegasus
+J, h = read_instance(full_pegasus.path, convention="minus_half")
+
+
+J = cp.asarray(J, dtype=cp.float32)
+h = cp.asarray(h, dtype=cp.float32)
+
+
+states, energy = parrarel_annealing_gpu(J, h, step_size=0.01, lambda_t_max=10, num_steps=10000, num_trajectories=2**10)
+print(min(energy))

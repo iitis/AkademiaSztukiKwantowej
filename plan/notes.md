@@ -9,12 +9,12 @@
 9. Zdefiniuj problem własny, wartości i wektory własne - done
 10. Dopisz równanie s i co oznacza oczekiwany pomiar - done
 
-1. Zdefiniuj luke energetyczną
-2. Alorytm heurystyczny, zależny od hiperparametrów, wybór hiperparametrów jest trudnny, koszt algorytmu sie ukrywa za hp
-3. Będzie dyskutowane szerzej przy bardziej skomplikowanych algorytmach, pararelizacja, GPU itp.
-4. dopisz więcej o gpu, wy ktos kto czyta mogł spojrzeć
-5. Sprawdź czy nie ma jakich todo i niewlasciwych rzeczy
-6. Napisz że te algorytmy są nowoczesne z nowych algorytków (pa, sbm)
-7. W statnie stacjonarnym, po zbinaryzowaniu otrzymujemy lokalne minimum modelu isinga, dopisz równania hamiltona do tego, albo wspomnij o tym
-8. Wytłumacz pararelizacje przez macierze
-9. wyczyść i upewni sie że sbm działa
+1. Zdefiniuj luke energetyczną - done
+2. Alorytm heurystyczny, zależny od hiperparametrów, wybór hiperparametrów jest trudnny, koszt algorytmu sie ukrywa za hp - done
+3. Będzie dyskutowane szerzej przy bardziej skomplikowanych algorytmach, pararelizacja, GPU itp. - done
+4. dopisz więcej o gpu, wy ktos kto czyta mogł spojrzeć - done
+5. Sprawdź czy nie ma jakich todo i niewlasciwych rzeczy done
+6. Napisz że te algorytmy są nowoczesne z nowych algorytków (pa, sbm) - done
+7. W statnie stacjonarnym, po zbinaryzowaniu otrzymujemy lokalne minimum modelu isinga, dopisz równania hamiltona do tego, albo wspomnij o tym - done
+8. Wytłumacz pararelizacje przez macierze - done
+9. wyczyść i upewni sie że sbm działa - done
