@@ -130,5 +130,18 @@ def calculate_energy_matrix(J: np.ndarray, h: np.ndarray, state: np.ndarray, con
     return np.sum(C, axis=0)
 
 
+def ising_to_qubo(J, h):
+    n = len(h)
+    Q = np.zeros((n, n))
+
+    for i in range(n):
+        for j in range(i, n):
+            if i==j:
+                Q[i,i] = 2* h[i] - 2 * sum([J[i, k] for k in range(i+1, n)])
+            else:
+                Q[i, j] = 4* J[i,j]
+    offset = np.sum(J) - np.sum(h)
+
+    return Q, offset
 
 
