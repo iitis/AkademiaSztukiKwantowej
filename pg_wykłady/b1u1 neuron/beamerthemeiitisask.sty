@@ -1,0 +1,111 @@
+\mode<presentation>
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage[polish]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphbox}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{physics}
+
+\usepackage{beamerthemebars}
+\usepackage[flushmargin]{footmisc}
+
+\definecolor{iitis-gray}{RGB}{131,130,128}
+\definecolor{iitis-orange}{RGB}{230,120,23}
+
+\setbeamercolor*{structure}{bg=iitis-gray!20,fg=iitis-orange}
+
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!75}
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!50!black}
+\setbeamercolor*{palette quaternary}{fg=white,bg=black}
+
+\setbeamercolor{section in toc}{fg=black,bg=white}
+\setbeamercolor{alerted text}{use=structure,fg=structure.fg!50!black!80!black}
+
+\setbeamercolor{titlelike}{parent=palette primary,fg=structure.fg!50!black}
+\setbeamercolor{frametitle}{bg=gray!10!white,fg=structure.fg!50!black}
+
+\setbeamercolor*{titlelike}{parent=palette primary}
+
+\usefonttheme[onlymath]{serif}
+\usefonttheme{professionalfonts}
+\setbeamerfont{title}{size = \Large}
+\setbeamerfont{frametitle}{size = \Large}
+\setbeamerfont{framesubtitle}{size=\normalfont\large}
+
+% iitis logos using tikz
+\def\e{0.2}
+\def\iitislogo{%
+  \resizebox{10pt}{10pt}{%
+    \begin{tikzpicture}%
+      \fill[color=iitis-gray] (2,0) rectangle (3,1);%
+      \fill[color=iitis-gray] (2,4) rectangle (3,5);%
+      \fill[color=iitis-gray] ({0-2*\e},2) rectangle ({1-2*\e},3);%
+      \fill[color=iitis-orange] ({1-\e},2) rectangle ({2-\e},3);%
+      \fill[color=iitis-orange] (2,2) rectangle (3,3);%
+      \fill[color=iitis-orange] (4,2) rectangle (5,3);%
+      \fill[color=iitis-orange] (3,3) rectangle (4,4);%
+      \fill[color=iitis-orange] (3,1) rectangle (4,2);%
+\end{tikzpicture}%
+}%
+}
+
+\setbeamertemplate{frametitle}{
+  \usebeamerfont{frametitle}
+  \usebeamercolor[fg]{frametitle}
+  \iitislogo\insertframetitle\\
+  \hspace{16pt}
+  \usebeamerfont{framesubtitle}
+  \usebeamercolor[fg]{framesubtitle}
+  \insertframesubtitle
+}
+
+\useoutertheme{infolines}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{framesubtitle}{\insertframesubtitle}
+\setbeamercovered{transparent}
+
+
+% footline
+\setbeamertemplate{footline}{%
+  \usebeamerfont{structure}
+  	\begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=2ex]{title in head/foot}%
+    	\hspace*{4mm}       
+    {IITiS PAN}
+    \hfill
+    {ask.iitis.pl}
+    \hfill
+  	\insertframenumber/\inserttotalframenumber
+      \hspace{4mm}
+  	\end{beamercolorbox}
+}
+
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\AtBeginSection{\frame{\centering{\huge \insertsection}}}
+\AtBeginSubsection{\frame{\centering{\large \insertsubsection}}}
+
+\titlegraphic{%
+\includegraphics[align=c, height=2cm]{pics/logos/ask_logo.png}\\
+\includegraphics[align=c, height=1cm]{pics/logos/mnisw.pdf}%
+\includegraphics[align=c, height=1cm]{pics/logos/nds.pdf}%
+\includegraphics[align=c, height=0.8cm]{pics/logos/iitis.pdf}%
+}
+\logo{\makebox[1.4cm]{\includegraphics[width=1.2cm]{pics/logos/ask_sygnet.png}}}
+\institute[IITiS PAN]{Instytut Informatyki Teoretycznej i Stosowanej Polskiej Akademii Nauk}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\nologo}{\setbeamertemplate{logo}{}}
+
+\newcommand\blfootnote[1]{%
+  \begingroup%
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup%
+}
+\newcommand{\source}[1]{\blfootnote{Źródło: #1}}
