@@ -98,5 +98,8 @@ jobs:
             Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/ \
             --ignore=Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/01_Praca_z_wyżarzaczami_kwantowymi.ipynb \
             --ignore=Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/06_GPU.ipynb \
+            --ignore=Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/benchmarks/obliczenia_podstawowe_srodowisko.ipynb \
+            --ignore=Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/benchmarks/obliczenia_dodatkowe_srodowisko.ipynb \
+            --ignore=Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/benchmarks/wyniki.ipynb \
             -v --tb=short
         continue-on-error: true

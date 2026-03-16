@@ -50,6 +50,11 @@ jupyter notebook
 >
 > Notebook GPU (`Dzien_2/06_GPU.ipynb`) wymaga osobnej instalacji CuPy
 > dopasowanej do lokalnej wersji CUDA.
+>
+> Notebooki z katalogu `Dzien_2/benchmarks/` wymagają dodatkowego środowiska
+> eksperymentalnego (GPU, CuPy/PyTorch CUDA oraz zewnętrzne biblioteki takie
+> jak `simulated_bifurcation`, `omnisolver`, `scikit-learn`) i nie są częścią
+> domyślnego smoke testu.
 
 ## Testy
 
@@ -78,8 +83,8 @@ GitHub Actions uruchamia automatycznie:
   oraz przy PR do głównej gałęzi
 
 Smoke test pomija notebooki wymagające zewnętrznego środowiska
-(D-Wave Cloud i GPU/CuPy), więc jego celem jest szybkie wykrywanie
-regresji uruchomieniowych w pozostałych materiałach.
+(D-Wave Cloud, GPU/CuPy oraz katalog `Dzien_2/benchmarks`), więc jego celem
+jest szybkie wykrywanie regresji uruchomieniowych w pozostałych materiałach.
 
 ## Licencja
 
