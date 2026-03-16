@@ -20,6 +20,7 @@ from Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych.pliki_pom
     calculate_energy,
     calculate_energy_matrix,
     dwave_conv_to_minus_half_convention,
+    read_instance_dict,
 )
 
 
@@ -205,3 +206,21 @@ class TestDwaveConvToMinusHalf:
         h = rng.uniform(-1, 1, n)
         J_herm, _ = dwave_conv_to_minus_half_convention(J, h)
         assert np.allclose(J_herm, J_herm.T)
+
+
+class TestReadInstanceDict:
+    def test_reads_instance_in_dwave_convention(self, tmp_path):
+        instance_path = tmp_path / "instance.txt"
+        instance_path.write_text("1 1 0.5\n1 2 -1.0\n2 2 0.25\n", encoding="utf-8")
+
+        J, h = read_instance_dict(instance_path, convention="dwave")
+
+        assert h == {0: 0.5, 1: 0.25}
+        assert J == {(0, 1): -1.0}
+
+    def test_raises_for_unsupported_convention(self, tmp_path):
+        instance_path = tmp_path / "instance.txt"
+        instance_path.write_text("1 1 0.5\n", encoding="utf-8")
+
+        with pytest.raises(ValueError, match="tylko konwencję 'dwave'"):
+            read_instance_dict(instance_path, convention="minus_half")

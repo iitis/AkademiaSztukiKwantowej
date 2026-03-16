@@ -58,6 +58,9 @@ def read_instance(path: os.PathLike, convention: str = "minus_half"):
 
 
 def read_instance_dict(path: os.PathLike, convention: str = "dwave"):
+    if convention != "dwave":
+        raise ValueError("read_instance_dict wspiera tylko konwencję 'dwave'")
+
     df = pd.read_csv(path, sep=" ", header=None, comment="#", names=["i", "j", "value"])
 
     h = {}
@@ -70,8 +73,7 @@ def read_instance_dict(path: os.PathLike, convention: str = "dwave"):
             J[(row.j - 1, row.i - 1)] = row.value  # by zachować górnotrójkątność
         else:
             J[(row.i - 1, row.j - 1)] = row.value
-    if convention == "dwave":
-        return J, h
+    return J, h
 
 
 
@@ -147,5 +149,4 @@ def ising_to_qubo(J: np.ndarray, h: np.ndarray):
     offset = np.sum(J) - np.sum(h)
 
     return Q, offset
-
 

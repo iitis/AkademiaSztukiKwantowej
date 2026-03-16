@@ -38,7 +38,7 @@ Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/
 git clone https://github.com/iitis/AkademiaSztukiKwantowej.git
 cd AkademiaSztukiKwantowej
 
-# 2. Zainstaluj zależności
+# 2. Zainstaluj zależności do większości notebooków
 pip install -r requirements.txt
 
 # 3. Uruchom Jupyter
@@ -47,6 +47,9 @@ jupyter notebook
 
 > Notebooki korzystające z D-Wave wymagają konta na https://cloud.dwavesys.com
 > i skonfigurowanego tokenu (`dwave config create`).
+>
+> Notebook GPU (`Dzien_2/06_GPU.ipynb`) wymaga osobnej instalacji CuPy
+> dopasowanej do lokalnej wersji CUDA.
 
 ## Testy
 
@@ -71,7 +74,12 @@ Ising ↔ QUBO oraz obliczania energii.
 
 GitHub Actions uruchamia automatycznie:
 - **testy jednostkowe** przy każdym push
-- **smoke test notebooków** przy PR do `master`
+- **nieblokujący smoke test notebooków** przy push do `master` / `main`
+  oraz przy PR do głównej gałęzi
+
+Smoke test pomija notebooki wymagające zewnętrznego środowiska
+(D-Wave Cloud i GPU/CuPy), więc jego celem jest szybkie wykrywanie
+regresji uruchomieniowych w pozostałych materiałach.
 
 ## Licencja
 

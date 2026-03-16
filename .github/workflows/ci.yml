@@ -11,18 +11,18 @@
 #    Wykonuje notebooki Dzień 1 i Dzień 2 od początku do końca.
 #    Cel: wykryć ImportError, NameError i inne błędy uruchomieniowe, które
 #    nie widać gołym okiem w plikach .ipynb przechowywanych w git.
-#    Notebooki wymagające D-Wave (połączenie sieciowe) są pomijane przez tag.
+#    Notebooki wymagające D-Wave Cloud lub lokalnego CUDA/CuPy są pomijane.
 #
 # Triggery:
+#   push → każda gałąź      uruchamia workflow
 #   push → master/main      uruchamia pełny pipeline
 #   push → inne gałęzie     uruchamia tylko testy jednostkowe
-#   pull_request → master   uruchamia pełny pipeline
+#   pull_request → master/main   uruchamia pełny pipeline
 
 name: CI
 
 on:
   push:
-    branches: ["master", "main"]
   pull_request:
     branches: ["master", "main"]
 
@@ -73,24 +73,17 @@ jobs:
           python-version: "3.11"
           cache: "pip"
 
-      # Instalujemy pełne zależności kursowe, ale bez dwave-ocean-sdk
-      # (wymaga konta D-Wave). Notebooki używające D-Wave są oznaczone
-      # tagiem "dwave" i pomijane przez nbmake (patrz: --ignore-glob).
+      # Instalujemy zależności używane przez notebooki objęte smoke testem.
+      # Notebooki wymagające dostępu do D-Wave Cloud lub lokalnego CUDA/CuPy
+      # są pomijane jawnie przez --ignore.
       - name: Zainstaluj zależności
         run: |
           pip install --upgrade pip
-          pip install \
-            matplotlib \
-            networkx \
-            numpy \
-            pandas \
-            tqdm \
-            qutip \
-            nbmake \
-            pytest
+          pip install -r requirements.txt
+          pip install nbmake pytest
 
-      # Uruchamia notebooki Dzień 1 (teoria) z wyjątkiem:
-      # - 01_Praca_z_wyżarzaczami_kwantowymi (wymaga D-Wave API)
+      # Uruchamia notebooki Dzień 1 (teoria) z wyjątkiem notebooka D-Wave,
+      # który wymaga skonfigurowanego API i dostępu sieciowego.
       - name: Wykonaj notebooki Dzień 1
         run: |
           pytest --nbmake \
@@ -104,5 +97,6 @@ jobs:
           pytest --nbmake \
             Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/ \
             --ignore=Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/01_Praca_z_wyżarzaczami_kwantowymi.ipynb \
+            --ignore=Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/06_GPU.ipynb \
             -v --tb=short
         continue-on-error: true
