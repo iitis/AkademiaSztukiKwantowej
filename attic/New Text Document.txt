@@ -1,0 +1,41 @@
+Jest to nowoczesny algorytm inspirowany procesem wyżarzania kwantowego. Został zaprezentowany przez Jiang *et al.,* w 2023 roku.
+
+
+W tym algorytmie używamy następującej konwencji modelu Isinga, gdzie macież $\bm{J}$ jest symetryczna. Dla przypomnienia, wróz na Hamiltonian wygląda następująco:
+
+$$
+H_{Ising} = -\sum_{i<j} J_{ij} \sigma_i \sigma_j - \sum_{i} h_i \sigma_{j} = -\frac{1}{2} \bm{\sigma}^T \bm{J} \bm{\sigma} - \bm{h}^T \bm{\sigma}
+$$
+
+Inspirując się wyżarzaniem kwantowym, 
+
+$$
+H_{system} = \lambda (t) H_{initial} + H_{Ising} 
+$$
+
+$$
+H_{initial} = \frac{1}{2} \sum_i x_i^2
+$$
+
+$$
+\text{gradient} = \nabla H_{system} = \nabla H_{Ising} + \lambda (t) \nabla H_{initial} = - \bm{J} \bm{\sigma} - \bm{h} + \lambda (t) \bm{x}
+$$
+
+
+Podczas rozwiązywania, po każdej iteracji analogowy pseudo-spin $x$ jest obcinany do wartości pomiędzy $-1$ i $1$. Formalnie:
+
+$$
+\text{clip}(x, -1, 1) = \max(-1, \min(1, x))
+$$
+
+Pozwala to zapopiec sytuacji że parametr zacznie rosnąć w nieskończoność i nie ma wpływu na efekt binaryzacji.
+
+$$
+m(t + 1) = \beta * m(t) - \alpha * gradient
+$$
+
+$$
+x(t + 1) = x(t) + m(t + 1)
+$$
+
+
