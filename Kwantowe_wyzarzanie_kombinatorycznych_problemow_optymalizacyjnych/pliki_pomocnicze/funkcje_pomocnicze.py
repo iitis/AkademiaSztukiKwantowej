@@ -5,9 +5,7 @@ import os
 import pandas as pd
 import numpy as np
 
-
-from dimod import BinaryQuadraticModel
-from  collections import namedtuple
+from collections import namedtuple
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INSTANCE_ROOT = os.path.join(ROOT, "pliki_pomocnicze", "instancje")
@@ -60,6 +58,9 @@ def read_instance(path: os.PathLike, convention: str = "minus_half"):
 
 
 def read_instance_dict(path: os.PathLike, convention: str = "dwave"):
+    if convention != "dwave":
+        raise ValueError("read_instance_dict wspiera tylko konwencję 'dwave'")
+
     df = pd.read_csv(path, sep=" ", header=None, comment="#", names=["i", "j", "value"])
 
     h = {}
@@ -72,8 +73,7 @@ def read_instance_dict(path: os.PathLike, convention: str = "dwave"):
             J[(row.j - 1, row.i - 1)] = row.value  # by zachować górnotrójkątność
         else:
             J[(row.i - 1, row.j - 1)] = row.value
-    if convention == "dwave":
-        return J, h
+    return J, h
 
 
 
@@ -96,21 +96,6 @@ def dwave_conv_to_minus_half_convention(J: np.ndarray, h: np.ndarray):
     return herminian_matrix, new_external_fields
 
 
-def ising_to_qubo(J, h):
-    bqm = BinaryQuadraticModel(h, J, vartype="SPIN")
-    qubo, offset = bqm.to_qubo()
-    N = bqm.num_variables
-    Q = np.zeros((N, N))
-    for (i, j), v in qubo.items():
-        if i == j:
-            Q[i, i] = v
-        elif i > j:
-            Q[j, i] = v
-        else:
-            Q[i, j] = v 
-    return Q, offset
-
-
 def calculate_energy(J: np.ndarray, h: np.ndarray, state: np.ndarray, convention: str = "minus_half"):
     if convention == "minus_half":
         return -1/2 * state @ J @ state.T - state @ h 
@@ -130,18 +115,38 @@ def calculate_energy_matrix(J: np.ndarray, h: np.ndarray, state: np.ndarray, con
     return np.sum(C, axis=0)
 
 
-def ising_to_qubo(J, h):
+def ising_to_qubo(J: np.ndarray, h: np.ndarray):
+    """Konwertuje problem Isinga na QUBO.
+
+    Zakłada konwencję D-Wave: E = sum_{i<j} J_ij s_i s_j + sum_i h_i s_i
+    gdzie s_i ∈ {-1, +1}, a J jest macierzą górnotrójkątną.
+
+    Podstawienie s_i = 2x_i - 1 (x_i ∈ {0,1}) prowadzi do:
+      Q[i,j] = 4 * J[i,j]          dla i < j
+      Q[i,i] = 2*h[i] - 2*sum_{k>i} J[i,k]
+      offset  = sum(J) - sum(h)
+
+    Args:
+        J: macierz sprzężeń górnotrójkątna (n x n), bez elementów diagonalnych
+        h: wektor pól zewnętrznych (n,)
+
+    Returns:
+        Q: macierz QUBO górnotrójkątna (n x n)
+        offset: stała energii (E_ising = x^T Q x + offset)
+    """
     n = len(h)
     Q = np.zeros((n, n))
 
     for i in range(n):
         for j in range(i, n):
-            if i==j:
-                Q[i,i] = 2* h[i] - 2 * sum([J[i, k] for k in range(i+1, n)])
+            if i == j:
+                # Suma obejmuje WSZYSTKICH sąsiadów spinu i:
+                # - J[k,i] dla k < i (w górnym trójkącie J, spin i jest tam kolumną)
+                # - J[i,k] dla k > i (spin i jest wierszem)
+                Q[i, i] = 2 * h[i] - 2 * sum(J[k, i] for k in range(i)) - 2 * sum(J[i, k] for k in range(i + 1, n))
             else:
-                Q[i, j] = 4* J[i,j]
+                Q[i, j] = 4 * J[i, j]
     offset = np.sum(J) - np.sum(h)
 
     return Q, offset
-
 

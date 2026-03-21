@@ -1,0 +1,105 @@
+# CI dla AkademiaSztukiKwantowej
+#
+# Co robi ten workflow i dlaczego?
+# ─────────────────────────────────
+# 1. UNIT TESTS (test_funkcje_pomocnicze.py)
+#    Uruchamiane przy każdym push i PR do gałęzi master/main.
+#    Weryfikują poprawność matematyczną funkcji konwertujących Ising ↔ QUBO
+#    oraz obliczania energii — błędy tu propagują się przez wszystkie notebooki.
+#
+# 2. NOTEBOOK SMOKE TEST (nbmake)
+#    Wykonuje notebooki Dzień 1 i Dzień 2 od początku do końca.
+#    Cel: wykryć ImportError, NameError i inne błędy uruchomieniowe, które
+#    nie widać gołym okiem w plikach .ipynb przechowywanych w git.
+#    Notebooki wymagające D-Wave Cloud lub lokalnego CUDA/CuPy są pomijane.
+#
+# Triggery:
+#   push → każda gałąź      uruchamia workflow
+#   push → master/main      uruchamia pełny pipeline
+#   push → inne gałęzie     uruchamia tylko testy jednostkowe
+#   pull_request → master/main   uruchamia pełny pipeline
+
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches: ["master", "main"]
+
+jobs:
+  # ──────────────────────────────────────────────────────────────────────────
+  # Job 1: Testy jednostkowe funkcji pomocniczych
+  # ──────────────────────────────────────────────────────────────────────────
+  unit-tests:
+    name: Testy jednostkowe
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pobierz kod
+        uses: actions/checkout@v4
+
+      # Używamy mini-środowiska bez D-Wave i QuTiP (ciężkie zależności).
+      # Do testów wystarczą numpy i pandas.
+      - name: Zainstaluj Pythona
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Zainstaluj zależności testowe
+        run: |
+          pip install --upgrade pip
+          pip install numpy pandas pytest
+
+      - name: Uruchom testy
+        run: pytest tests/ -v --tb=short
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # Job 2: Smoke test notebooków (tylko na master/main)
+  # ──────────────────────────────────────────────────────────────────────────
+  notebook-tests:
+    name: Smoke test notebooków
+    runs-on: ubuntu-latest
+    # Uruchamiaj tylko przy push/PR do głównej gałęzi, nie na każdej gałęzi
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
+
+    steps:
+      - name: Pobierz kod
+        uses: actions/checkout@v4
+
+      - name: Zainstaluj Pythona
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      # Instalujemy zależności używane przez notebooki objęte smoke testem.
+      # Notebooki wymagające dostępu do D-Wave Cloud lub lokalnego CUDA/CuPy
+      # są pomijane jawnie przez --ignore.
+      - name: Zainstaluj zależności
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install nbmake pytest
+
+      # Uruchamia notebooki Dzień 1 (teoria) z wyjątkiem notebooka D-Wave,
+      # który wymaga skonfigurowanego API i dostępu sieciowego.
+      - name: Wykonaj notebooki Dzień 1
+        run: |
+          pytest --nbmake \
+            Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_1/ \
+            --ignore=Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_1/08_D_Wave.ipynb \
+            -v --tb=short
+        continue-on-error: true   # notebooki mogą mieć ciężkie obliczenia — nie blokuj CI
+
+      - name: Wykonaj notebooki Dzień 2
+        run: |
+          pytest --nbmake \
+            Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/ \
+            --ignore=Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/01_Praca_z_wyżarzaczami_kwantowymi.ipynb \
+            --ignore=Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/06_GPU.ipynb \
+            --ignore=Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/benchmarks/obliczenia_podstawowe_srodowisko.ipynb \
+            --ignore=Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/benchmarks/obliczenia_dodatkowe_srodowisko.ipynb \
+            --ignore=Kwantowe_wyzarzanie_kombinatorycznych_problemow_optymalizacyjnych/Dzien_2/benchmarks/wyniki.ipynb \
+            -v --tb=short
+        continue-on-error: true

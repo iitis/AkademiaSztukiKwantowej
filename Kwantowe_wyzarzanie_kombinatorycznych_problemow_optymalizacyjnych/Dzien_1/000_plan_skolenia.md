@@ -13,7 +13,7 @@
 - Podejście heurystycznie: przegląd klasycznych algorytmów inspirowanych fizycznie.
 - Kwantowanie modelu Isinga: kwantowy model Isinga z poprzecznym polem.
 - Związek pomiędzy klasycznym a kwantowym modelem Isinga: problem własny a sortowanie.
-- Twierdzenie adiabatyczne w mechanice kwantowej oraz kyżarzanie.
+- Twierdzenie adiabatyczne w mechanice kwantowej oraz wyżarzanie.
 - Kwantowy procesor wyżarzający D-Wave: opis, dostępne topologie, osadzanie problemów.
 
 ## Praktyka
