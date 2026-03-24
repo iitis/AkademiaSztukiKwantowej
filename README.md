@@ -44,7 +44,9 @@ Adiabatyczne obliczenia kwantowe i algorytmy inspirowane fizyką, ze szczególny
 
 Rozwiązywanie problemów uczenia maszynowego za pomocą komputerów kwantowych. Tworzenie klasyfikatorów i regresorów działających na prawdziwych danych.
 
-> Materiały do tego bloku nie mają jeszcze dedykowanej gałęzi w repozytorium. Częściowo tematykę pokrywa gałąź [`pg/qcintro`](https://github.com/iitis/AkademiaSztukiKwantowej/tree/pg/qcintro) (wykład o QML/VQE).
+| Gałąź | Zawartość | Prowadzący |
+|-------|-----------|------------|
+| [`pg_final`](https://github.com/iitis/AkademiaSztukiKwantowej/tree/pg_final) | 5 wykładów (perceptron, MLP, metody statystyczne ML) + rozbudowane warsztaty (Jupyter): klasteryzacja, PCA/t-SNE, detekcja anomalii, SVM/SHAP, sieci konwolucyjne, LLM. | dr hab. inż. Przemysław Głomb |
 
 ## Szablon prezentacji
 
