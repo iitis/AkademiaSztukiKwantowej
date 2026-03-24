@@ -48,19 +48,6 @@ Rozwiązywanie problemów uczenia maszynowego za pomocą komputerów kwantowych.
 |-------|-----------|------------|
 | [`pg_final`](https://github.com/iitis/AkademiaSztukiKwantowej/tree/pg_final) | 5 wykładów (perceptron, MLP, metody statystyczne ML) + rozbudowane warsztaty (Jupyter): klasteryzacja, PCA/t-SNE, detekcja anomalii, SVM/SHAP, sieci konwolucyjne, LLM. | dr hab. inż. Przemysław Głomb |
 
-## Szablon prezentacji
-
-| Gałąź | Zawartość | Autor |
-|-------|-----------|-------|
-| [`pg/template`](https://github.com/iitis/AkademiaSztukiKwantowej/tree/pg/template) | Szablon Beamer (16:9) z motywem IITIS ASK, logami instytucji oraz workflow GitHub Actions do automatycznej kompilacji PDF. Punkt wyjścia dla nowych prezentacji. | dr hab. inż. Piotr Gawron |
-
 ## Harmonogram wydarzeń
 
 Pełny kalendarz szkoleń i warsztatów: [akademia.iitis.pl](https://akademia.iitis.pl/)
-
-## Zasady pracy z repozytorium
-
-1. Każdy wykład/szkolenie w osobnej gałęzi.
-2. Do każdego wykładu dodajemy workflow budujący PDF z LaTeXa: [GitHub Action for LaTeX](https://github.com/marketplace/actions/github-action-for-latex).
-3. Upload PDFa zgodnie z zaleceniami z dokumentacji workflow.
-4. Materiały do głównej gałęzi wrzucamy poprzez PR.
