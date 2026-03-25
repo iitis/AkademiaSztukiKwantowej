@@ -55,3 +55,19 @@ Pełny kalendarz szkoleń i warsztatów: [akademia.iitis.pl](https://akademia.ii
 ## Strona projektu
 
 Strona projektu: [ask.iitis.pl](https://ask.iitis.pl/)
+
+## Finansowanie
+
+*Projekt dofinansowany ze środków budżetu państwa, przyznanych przez Ministra Edukacji i Nauki w ramach Programu „Nauka dla Społeczeństwa II"*
+
+Numer projektu: **NdS-II/SP/0222/2024/01**
+
+Termin realizacji: **od 03/04/2024 do 03/04/2026**
+
+Źródło finansowania: **Ministerstwo Nauki i Szkolnictwa Wyższego**
+
+Nazwa programu i moduł: **Nauka dla Społeczeństwa II**
+
+Kwota przyznana: **1 000 000 PLN**
+
+![Ministerstwo Nauki i Szkolnictwa Wyższego](https://ask.iitis.pl/assets/images/logo1.png) ![Nauka Dla Społeczeństwa](https://ask.iitis.pl/assets/images/logo2.png)
