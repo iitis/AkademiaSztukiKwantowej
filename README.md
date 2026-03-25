@@ -51,3 +51,7 @@ Rozwiązywanie problemów uczenia maszynowego za pomocą komputerów kwantowych.
 ## Harmonogram wydarzeń
 
 Pełny kalendarz szkoleń i warsztatów: [akademia.iitis.pl](https://akademia.iitis.pl/)
+
+## Strona projektu
+
+Strona projektu: [ask.iitis.pl](https://ask.iitis.pl/)
