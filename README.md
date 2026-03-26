@@ -15,7 +15,7 @@ Wprowadzenie do obliczeń kwantowych — od podstaw fizyki kwantowej po zaawanso
 | [`pg/qcintro`](https://github.com/iitis/AkademiaSztukiKwantowej/tree/pg/qcintro) | 5 wykładów (LaTeX/Beamer): motywacja do QC, model bramkowy, kwantowe sieci neuronowe, obliczenia adiabatyczne, VQE. Materiały uzupełniające (książeczka + slajdy) oraz przykłady w Pythonie (PennyLane). | dr hab. inż. Piotr Gawron |
 | [`zp/QI_intro_lectures`](https://github.com/iitis/AkademiaSztukiKwantowej/tree/zp/QI_intro_lectures) | Plan 12 wykładów: przestrzenie Hilberta, superpozycja, splątanie, stany Bella, twierdzenie o nieklonowaniu, teleportacja, kryptografia kwantowa, algorytmy Shora i Grovera, korekcja błędów. **Uwaga: na razie tylko plan (`plan.md`), brak treści wykładów.** | prof. dr hab. Zbigniew Puchała |
 
-### 2. Uczenie maszynowe
+### 2. Dwa dni z uczeniem maszynowym
 
 Wprowadzenie do klasycznego (nie-kwantowego) uczenia maszynowego. Nacisk na zrozumienie istoty działania metod i ich praktyczne zastosowanie — od analizy danych, przez sieci neuronowe, po klasyczne modele (SVM). Stanowi podstawę do metod kwantowych.
 
@@ -24,7 +24,7 @@ Wprowadzenie do klasycznego (nie-kwantowego) uczenia maszynowego. Nacisk na zroz
 | [`mlintro`](https://github.com/iitis/AkademiaSztukiKwantowej/tree/mlintro) | Wykład wprowadzający (LaTeX): sztuczne sieci neuronowe, metody jądrowe, klasyfikacja danych hiperspektralnych. | dr hab. inż. Przemysław Głomb |
 | [`pg_final`](https://github.com/iitis/AkademiaSztukiKwantowej/tree/pg_final) | 5 wykładów (perceptron, MLP, metody statystyczne ML) + rozbudowane warsztaty (Jupyter): klasteryzacja, PCA/t-SNE, detekcja anomalii, SVM/SHAP, sieci konwolucyjne, LLM. | dr hab. inż. Przemysław Głomb |
 
-### 3. Uczenie architektur kwantowych
+### 3. Kwantowy perceptron
 
 Implementacja kwantowego modelu perceptronu przy użyciu technologii komputerów kwantowych IBM. Bramkowy model obliczeń kwantowych w praktyce — programowanie na komputerze kwantowym.
 
@@ -40,13 +40,14 @@ Adiabatyczne obliczenia kwantowe i algorytmy inspirowane fizyką, ze szczególny
 |-------|-----------|------------|
 | [`bg/quantum_annealing`](https://github.com/iitis/AkademiaSztukiKwantowej/tree/bg/quantum_annealing) | Szkolenie 2-dniowe: dzień 1 (teoria) — model Isinga, QUBO, kodowanie problemów (Max-Cut, kolorowanie grafów, TSP), algorytmy heurystyczne, D-Wave; dzień 2 (praktyka) — symulowane wyżarzanie, symulowana bifurkacja, akceleracja GPU (CUDA). Notebooki Jupyter + moduły Python + instancje testowe (Chimera, Pegasus, Zephyr). | dr hab. Bartłomiej Gardas |
 
-### 5. Kwantowe sieci neuronowe i kwantowe metody jądrowe
+### 5. Kwantowe uczenie maszynowe i kwantowe metody jądrowe
 
 Rozwiązywanie problemów uczenia maszynowego za pomocą komputerów kwantowych. Tworzenie klasyfikatorów i regresorów działających na prawdziwych danych.
 
 | Gałąź | Zawartość | Prowadzący |
 |-------|-----------|------------|
 | [`pg_final`](https://github.com/iitis/AkademiaSztukiKwantowej/tree/pg_final) | 5 wykładów (perceptron, MLP, metody statystyczne ML) + rozbudowane warsztaty (Jupyter): klasteryzacja, PCA/t-SNE, detekcja anomalii, SVM/SHAP, sieci konwolucyjne, LLM. | dr hab. inż. Przemysław Głomb |
+| [`pg/szkolenie`](https://github.com/iitis/AkademiaSztukiKwantowej/tree/pg/szkolenie) | Szkolenie 2-dniowe (QML): obwody parametryzowalne, algorytmy wariacyjne, kwantowe sieci neuronowe (QNN), metody jądrowe, modele hybrydowe (PyTorch/Jax + PennyLane), szum i mitigacja błędów. Wykłady (LaTeX/Beamer) + przykłady w Pythonie (PennyLane). | dr hab. inż. Piotr Gawron |
 
 ## Harmonogram wydarzeń
 
