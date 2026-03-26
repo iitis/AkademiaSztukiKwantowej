@@ -1,0 +1,75 @@
+\documentclass[multi=my,varwidth=true,preview]{standalone}
+\usepackage{fontawesome}
+\usepackage{tikz}
+\usetikzlibrary{quantikz}
+\begin{document}
+\begin{my}
+    \begin{quantikz}[slice all, remove end slices=1]
+        \lstick{$\ket{0}$} & \gate{H} & \ctrl{1} & \gate{H} & \meter{} &
+        \rstick{
+            $
+                \begin{cases}
+                    0 & \text{ if } f(0)=f(1)      \\
+                    1 & \text{ if } f(0)=\neg f(1)
+                \end{cases}$}
+        \qw
+        \\
+        \lstick{$\ket{0} - \ket{1}$} & \qw & \gate{f} & \qw   & \qw & \rstick{$\ket{0} - \ket{1}$}\qw
+    \end{quantikz}
+\end{my}
+\begin{my}
+    \begin{center}
+        \begin{quantikz}
+            &  \qw & \qw
+            \\
+            &  \qw & \qw
+        \end{quantikz}\\
+        $f(0)=0, f(1)=0$
+    \end{center}
+\end{my}
+\begin{my}
+    \begin{center}
+        \begin{quantikz}
+            &  \qw & \qw
+            \\
+            &  \gate{X} & \qw
+        \end{quantikz}\\
+        $f(0)=1, f(1)=1$
+    \end{center}
+\end{my}
+\begin{my}
+    \begin{center}
+        \begin{quantikz}
+            &  \ctrl{1} & \qw
+            \\
+            &  \targ{} & \qw
+        \end{quantikz}\\
+        $f(0)=0, f(1)=1$
+    \end{center}
+\end{my}
+\begin{my}
+    \begin{center}
+        \begin{quantikz}
+            &  \ctrl{1} & \qw & \qw
+            \\
+            &  \targ{} & \gate{X} & \qw
+        \end{quantikz}\\
+        $f(0)=1, f(1)=0$
+    \end{center}
+\end{my}
+\begin{my}
+    \begin{quantikz}
+        \lstick{$\ket{0}$} & \gate{H} & \ctrl{1} & \gate{H} & \meter{} &
+%        \rstick{
+%            $
+%                \begin{cases}
+%                    0 & \text{ if } f(0)=f(1)      \\
+%                    1 & \text{ if } f(0)=\neg f(1)
+%                \end{cases}$}
+        \qw
+        \\
+        \lstick{$\ket{0} - \ket{1}$} & \qw & \gate{f} & \qw   & \qw & 
+        \rstick{$\ket{0} - \ket{1}$}\qw
+    \end{quantikz}
+\end{my}
+\end{document}
