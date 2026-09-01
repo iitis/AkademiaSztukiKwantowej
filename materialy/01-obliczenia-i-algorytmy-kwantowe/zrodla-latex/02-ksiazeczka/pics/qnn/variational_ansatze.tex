@@ -1,0 +1,14 @@
+\documentclass{standalone}
+
+\usepackage{tikz}	
+\usetikzlibrary{quantikz}  % TikZ libraries
+
+\begin{document}
+\def\gg{\gategroup[4,steps=4,style={dashed,rounded corners,fill=blue!20,inner xsep=2pt},background]{$U_\mathrm{var}^{(k)}(\theta)$} }
+\begin{tikzcd}
+& \gate[1]{R(\theta_1)}\gg & \ctrl{1}& \qw      & \qw      & \qw \\
+& \gate[1]{R(\theta_2)}    & \targ{} & \ctrl{1} & \qw      & \qw \\
+& \gate[1]{R(\theta_3)}    & \qw     & \targ{}  & \ctrl{1} & \qw \\ 
+& \gate[1]{R(\theta_4)}    & \qw     & \qw      & \targ{}  & \qw 
+\end{tikzcd}
+\end{document}

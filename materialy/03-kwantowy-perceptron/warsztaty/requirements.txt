@@ -1,0 +1,11 @@
+# Pakiety potrzebne do uruchomienia notatników warsztatowych.
+# Instalacja:  pip install -r requirements.txt
+numpy
+matplotlib
+jupyter
+tqdm
+qiskit
+qiskit-aer
+qiskit-ibm-runtime
+qiskit-machine-learning
+mthree

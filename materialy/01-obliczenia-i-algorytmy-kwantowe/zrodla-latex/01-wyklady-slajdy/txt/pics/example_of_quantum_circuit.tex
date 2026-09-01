@@ -1,0 +1,11 @@
+\documentclass[multi=my,preview]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{quantikz}
+\begin{document}
+\begin{my}
+    \begin{quantikz}
+        \lstick{$\ket{0}$} & \gate{H} & \ctrl{1} & \qw & \rstick{} \qw   \\
+        \lstick{$\ket{0}$} & \qw      & \targ{}  & \qw & \rstick{} \qw  \\
+    \end{quantikz}
+\end{my}
+\end{document}

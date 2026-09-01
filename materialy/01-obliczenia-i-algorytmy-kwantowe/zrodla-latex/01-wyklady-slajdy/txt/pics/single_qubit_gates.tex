@@ -1,0 +1,42 @@
+\documentclass[multi=my,preview]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{quantikz}
+
+\begin{document}
+\begin{my}
+    \begin{quantikz}
+        \lstick{$\alpha\ket{0}+\beta\ket{1}$} & \gate{I} & 
+        \rstick{$\alpha\ket{0}+\beta\ket{1}$} \qw
+    \end{quantikz}
+\end{my}
+\begin{my}
+    \begin{quantikz}
+        \lstick{$\alpha\ket{0}+\beta\ket{1}$} & \gate{X} & \rstick{$\beta\ket{0}+\alpha\ket{1}$} \qw
+    \end{quantikz}
+\end{my}
+\begin{my}
+    \begin{quantikz}
+        \lstick{$\alpha\ket{0}+\beta\ket{1}$} & \gate{Y} & 
+        \rstick{$-\beta \mathrm{i} \ket{0} + \alpha \mathrm{i} \ket{1}$} \qw
+    \end{quantikz}
+\end{my}
+\begin{my}
+    \begin{quantikz}
+        \lstick{$\alpha\ket{0}+\beta\ket{1}$} & \gate{Z} & 
+        \rstick{$\alpha\ket{0}-\beta\ket{1}$} \qw
+    \end{quantikz}
+\end{my}
+\begin{my}
+    \begin{quantikz}
+        \lstick{$\alpha\ket{0}+\beta\ket{1}$} & \gate{P(\phi)} &
+        \rstick{$\alpha\ket{0}+e^{i \phi}\beta\ket{1}$} \qw
+    \end{quantikz}
+\end{my}
+\begin{my}
+    \begin{quantikz}
+        \lstick{$\alpha\ket{0}+\beta\ket{1}$} & \gate{H} &
+        \rstick{$\alpha\frac{\ket{0}+\ket{1}}{\sqrt{2}}+\beta\frac{\ket{0}-\ket{1}}{\sqrt{2}}$}
+         \qw
+    \end{quantikz}
+\end{my}
+\end{document}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kwantowy perceptron — Akademia Sztuki Kwantowej</title>
+<meta name="description" content="Implementacja kwantowego modelu perceptronu na komputerach kwantowych IBM. Bramkowy model obliczeń kwantowych w praktyce: Qiskit, dostęp do IBM Quantu">
+<link rel="stylesheet" href="styl.css">
+</head>
+<body>
+<a class="pominiecie" href="#tresc">Przejdź do treści</a>
+<header class="glowny"><div class="srodek">
+<p class="nawigacja"><a href="../index.html">Materiały Akademii Sztuki Kwantowej</a> → blok 3</p><h1>Kwantowy perceptron</h1><p class="podtytul">Prowadzenie: dr hab. inż. Łukasz Pawela</p>
+</div></header>
+<main id="tresc" class="srodek">
+<p>Implementacja kwantowego modelu perceptronu na komputerach kwantowych IBM. Bramkowy model obliczeń kwantowych w praktyce: Qiskit, dostęp do IBM Quantum, szum kwantowy i mitygacja błędów pomiaru, kwantowe sieci neuronowe, algorytm Deutscha, bramki pulsowe.</p>
+<h2>Slajdy i skrypty (PDF)</h2>
+<p>Pliki otwierają się bezpośrednio w przeglądarce — nie trzeba niczego instalować ani zakładać konta.</p>
+<div class="przewijane"><table><thead><tr><th scope="col">Materiał</th><th scope="col">Stron</th><th scope="col">Rozmiar</th></tr></thead><tbody>
+<tr><td><a href="../materialy/03-kwantowy-perceptron/materialy-zrodlowe/1811.02266-artykul-quantum-perceptron.pdf">F. Tacchino i in., „An Artificial Neuron Implemented on an Actual Quantum Processor” (arXiv:1811.02266) — artykuł źródłowy</a><br><span class="meta"><code>1811.02266-artykul-quantum-perceptron.pdf</code></span></td><td class="liczba">8</td><td class="liczba">4,3 MB</td></tr>
+<tr><td><a href="../materialy/03-kwantowy-perceptron/wyklady/01-kwantowy-perceptron-komplet-materialow.pdf">Kwantowy perceptron — komplet materiałów szkolenia w jednym pliku</a><br><span class="meta"><code>01-kwantowy-perceptron-komplet-materialow.pdf</code></span></td><td class="liczba">136</td><td class="liczba">3,8 MB</td></tr>
+<tr><td><a href="../materialy/03-kwantowy-perceptron/wyklady/02-slajdy-pomocnicze.pdf">Slajdy pomocnicze do ćwiczeń</a><br><span class="meta"><code>02-slajdy-pomocnicze.pdf</code></span></td><td class="liczba">24</td><td class="liczba">1,1 MB</td></tr>
+</tbody></table></div>
+<h2>Notatniki Jupyter z ćwiczeniami</h2>
+<p>Odnośnik <em>„otwórz podgląd”</em> prowadzi do gotowego podglądu notatnika wraz z wynikami obliczeń i wykresami — bez instalowania Pythona. Aby samodzielnie uruchomić kod, należy pobrać plik <code>.ipynb</code> (patrz „Jak uruchomić ćwiczenia” poniżej).</p>
+<h3>Notatniki Jupyter z ćwiczeniami</h3>
+<p class="meta">katalog <code>warsztaty</code></p>
+<div class="przewijane"><table><thead><tr><th scope="col">Notatnik</th><th scope="col">Podgląd</th><th scope="col">Plik</th><th scope="col">Komórek</th></tr></thead><tbody>
+<tr><td>Getting started<br><span class="meta"><code>00-getting-started.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/03-kwantowy-perceptron/warsztaty/00-getting-started.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/03-kwantowy-perceptron/warsztaty/00-getting-started.ipynb">pobierz</a></td><td class="liczba">28</td></tr>
+<tr><td>Building Noise Models<br><span class="meta"><code>10-noise.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/03-kwantowy-perceptron/warsztaty/10-noise.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/03-kwantowy-perceptron/warsztaty/10-noise.ipynb">pobierz</a></td><td class="liczba">31</td></tr>
+<tr><td>Safe token management<br><span class="meta"><code>20-accessing-ibmq.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/03-kwantowy-perceptron/warsztaty/20-accessing-ibmq.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/03-kwantowy-perceptron/warsztaty/20-accessing-ibmq.ipynb">pobierz</a></td><td class="liczba">29</td></tr>
+<tr><td>Obtaining information about your `backend`<br><span class="meta"><code>30-backend_info.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/03-kwantowy-perceptron/warsztaty/30-backend_info.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/03-kwantowy-perceptron/warsztaty/30-backend_info.ipynb">pobierz</a></td><td class="liczba">25</td></tr>
+<tr><td>Noise Model Examples<br><span class="meta"><code>45-noise-revisited.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/03-kwantowy-perceptron/warsztaty/45-noise-revisited.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/03-kwantowy-perceptron/warsztaty/45-noise-revisited.ipynb">pobierz</a></td><td class="liczba">10</td></tr>
+<tr><td>Introduction<br><span class="meta"><code>46-device-noise.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/03-kwantowy-perceptron/warsztaty/46-device-noise.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/03-kwantowy-perceptron/warsztaty/46-device-noise.ipynb">pobierz</a></td><td class="liczba">11</td></tr>
+<tr><td>Mthree basic<br><span class="meta"><code>50-mthree-basic.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/03-kwantowy-perceptron/warsztaty/50-mthree-basic.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/03-kwantowy-perceptron/warsztaty/50-mthree-basic.ipynb">pobierz</a></td><td class="liczba">13</td></tr>
+<tr><td>Definition of the sign flip<br><span class="meta"><code>60-perceptron.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/03-kwantowy-perceptron/warsztaty/60-perceptron.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/03-kwantowy-perceptron/warsztaty/60-perceptron.ipynb">pobierz</a></td><td class="liczba">13</td></tr>
+<tr><td>Definition of th sign flip<br><span class="meta"><code>70-perceptron-ibmq.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/03-kwantowy-perceptron/warsztaty/70-perceptron-ibmq.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/03-kwantowy-perceptron/warsztaty/70-perceptron-ibmq.ipynb">pobierz</a></td><td class="liczba">15</td></tr>
+<tr><td>Data preparation<br><span class="meta"><code>80-qnn.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/03-kwantowy-perceptron/warsztaty/80-qnn.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/03-kwantowy-perceptron/warsztaty/80-qnn.ipynb">pobierz</a></td><td class="liczba">12</td></tr>
+<tr><td>Deutsch&#x27;s problem<br><span class="meta"><code>85-deutsch.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/03-kwantowy-perceptron/warsztaty/85-deutsch.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/03-kwantowy-perceptron/warsztaty/85-deutsch.ipynb">pobierz</a></td><td class="liczba">22</td></tr>
+<tr><td>Pulse gates<br><span class="meta"><code>90-pulse-gates.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/03-kwantowy-perceptron/warsztaty/90-pulse-gates.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/03-kwantowy-perceptron/warsztaty/90-pulse-gates.ipynb">pobierz</a></td><td class="liczba">19</td></tr>
+</tbody></table></div>
+<h2>Program szkolenia</h2>
+<div class="przewijane"><table><thead><tr><th scope="col">Dokument</th><th scope="col">Rozmiar</th></tr></thead><tbody>
+<tr><td><a href="../materialy/03-kwantowy-perceptron/plan/plan.md">Plan</a><br><span class="meta"><code>plan/plan.md</code></span></td><td class="liczba">1 kB</td></tr>
+<tr><td><a href="../materialy/03-kwantowy-perceptron/plan/plan.pdf">Plan</a><br><span class="meta"><code>plan/plan.pdf</code></span></td><td class="liczba">35 kB</td></tr>
+<tr><td><a href="../materialy/03-kwantowy-perceptron/plan/plan2.md">Plan2</a><br><span class="meta"><code>plan/plan2.md</code></span></td><td class="liczba">4 kB</td></tr>
+</tbody></table></div>
+<h2>Jak uruchomić ćwiczenia</h2>
+<ol class="kroki"><li>Zainstaluj Pythona w wersji 3.10 lub nowszej (<a href="https://www.python.org/downloads/">python.org</a>).</li><li>Pobierz materiały bloku: przejdź do <a href="https://github.com/iitis/AkademiaSztukiKwantowej/tree/master/materialy/03-kwantowy-perceptron">katalogu w repozytorium</a> i użyj przycisku <em>Code → Download ZIP</em> (pobiera całe repozytorium) lub sklonuj je poleceniem <code>git clone https://github.com/iitis/AkademiaSztukiKwantowej.git</code>.</li><li>Zainstaluj wymagane pakiety: <code>pip install -r materialy/03-kwantowy-perceptron/warsztaty/requirements.txt</code></li><li>Uruchom notatniki: <code>jupyter notebook</code> — a następnie otwórz wybrany plik <code>.ipynb</code>.</li></ol>
+<h2>Materiały źródłowe i historia prac</h2>
+<p>Komplet plików roboczych, z których powstały powyższe materiały (źródła LaTeX wraz z rysunkami, wersje robocze notatników, pełna historia zmian), pozostaje w gałęziach autorskich repozytorium: <a href="https://github.com/iitis/AkademiaSztukiKwantowej/tree/lp/perceptron"><code>lp/perceptron</code></a>. Do korzystania z materiałów nie jest potrzebny dostęp do tych gałęzi.</p>
+</main>
+<footer><div class="srodek">
+<p><strong>Akademia Sztuki Kwantowej</strong> — projekt Instytutu Informatyki Teoretycznej
+i Stosowanej Polskiej Akademii Nauk w Gliwicach, nr NdS-II/SP/0222/2024/01.</p>
+<p>Projekt dofinansowany ze środków budżetu państwa w ramach programu Ministra Nauki
+i Szkolnictwa Wyższego „Nauka dla Społeczeństwa II”. Kwota dofinansowania: 1 000 000 zł.</p>
+<p>Materiały udostępniane na licencji Apache 2.0. Strona projektu:
+<a href="https://ask.iitis.pl/">ask.iitis.pl</a> ·
+Repozytorium: <a href="https://github.com/iitis/AkademiaSztukiKwantowej">github.com/iitis/AkademiaSztukiKwantowej</a></p>
+</div></footer>
+</body>
+</html>

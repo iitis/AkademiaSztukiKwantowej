@@ -1,0 +1,21 @@
+# Pakiety potrzebne do uruchomienia notatników warsztatowych.
+# Instalacja:  pip install -r requirements.txt
+#
+# Uwaga: pełny zestaw (torch, transformers, ultralytics) jest duży (~3 GB).
+# Do zajęć z dni 1 wystarczą cztery pierwsze pozycje.
+numpy
+scipy
+matplotlib
+scikit-learn
+pandas
+jupyter
+shap
+# --- dzień 2: sieci neuronowe ---
+torch
+torchvision
+# --- dzień 2, ćwiczenia dodatkowe: sieci konwolucyjne i LLM ---
+ultralytics
+transformers
+datasets
+peft
+pillow

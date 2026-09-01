@@ -1,0 +1,7 @@
+# Pakiety potrzebne do uruchomienia przykładów z katalogu kod/
+# Instalacja:  pip install -r requirements.txt
+numpy
+matplotlib
+scikit-learn
+pennylane
+qutip

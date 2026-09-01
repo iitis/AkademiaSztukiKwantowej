@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kwantowe wyżarzanie kombinatorycznych problemów optymalizacyjnych — Akademia Sztuki Kwantowej</title>
+<meta name="description" content="Adiabatyczne obliczenia kwantowe i algorytmy inspirowane fizyką, ze szczególnym uwzględnieniem procesora kwantowego D-Wave. Model Isinga i QUBO, kodow">
+<link rel="stylesheet" href="styl.css">
+</head>
+<body>
+<a class="pominiecie" href="#tresc">Przejdź do treści</a>
+<header class="glowny"><div class="srodek">
+<p class="nawigacja"><a href="../index.html">Materiały Akademii Sztuki Kwantowej</a> → blok 4</p><h1>Kwantowe wyżarzanie kombinatorycznych problemów optymalizacyjnych</h1><p class="podtytul">Prowadzenie: dr hab. Bartłomiej Gardas</p>
+</div></header>
+<main id="tresc" class="srodek">
+<p>Adiabatyczne obliczenia kwantowe i algorytmy inspirowane fizyką, ze szczególnym uwzględnieniem procesora kwantowego D-Wave. Model Isinga i QUBO, kodowanie problemów (Max-Cut, kolorowanie grafów, TSP), symulowane wyżarzanie, symulowana bifurkacja, obliczenia na kartach graficznych.</p>
+<h2>Slajdy i skrypty (PDF)</h2>
+<p>Pliki otwierają się bezpośrednio w przeglądarce — nie trzeba niczego instalować ani zakładać konta.</p>
+<div class="przewijane"><table><thead><tr><th scope="col">Materiał</th><th scope="col">Stron</th><th scope="col">Rozmiar</th></tr></thead><tbody>
+<tr><td><a href="../materialy/04-kwantowe-wyzarzanie/wyklady/01-kwantowe-wyzarzanie-komplet-materialow.pdf">Kwantowe wyżarzanie — komplet materiałów szkolenia w jednym pliku</a><br><span class="meta"><code>01-kwantowe-wyzarzanie-komplet-materialow.pdf</code></span></td><td class="liczba">136</td><td class="liczba">2,9 MB</td></tr>
+</tbody></table></div>
+<h2>Notatniki Jupyter z ćwiczeniami</h2>
+<p>Odnośnik <em>„otwórz podgląd”</em> prowadzi do gotowego podglądu notatnika wraz z wynikami obliczeń i wykresami — bez instalowania Pythona. Aby samodzielnie uruchomić kod, należy pobrać plik <code>.ipynb</code> (patrz „Jak uruchomić ćwiczenia” poniżej).</p>
+<h3>Dzień 1 — teoria: model Isinga, QUBO, twierdzenie adiabatyczne, D-Wave</h3>
+<p class="meta">katalog <code>warsztaty/dzien-1</code></p>
+<div class="przewijane"><table><thead><tr><th scope="col">Notatnik</th><th scope="col">Podgląd</th><th scope="col">Plik</th><th scope="col">Komórek</th></tr></thead><tbody>
+<tr><td>Pozyskanie plików<br><span class="meta"><code>00_Przygotowanie_srodowiska_pracy.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-1/00_Przygotowanie_srodowiska_pracy.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-1/00_Przygotowanie_srodowiska_pracy.ipynb">pobierz</a></td><td class="liczba">33</td></tr>
+<tr><td>Klasyczny model Isinga<br><span class="meta"><code>01_Klasyczny_model_Isinga.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-1/01_Klasyczny_model_Isinga.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-1/01_Klasyczny_model_Isinga.ipynb">pobierz</a></td><td class="liczba">17</td></tr>
+<tr><td>Model QUBO<br><span class="meta"><code>02_Model_QUBO.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-1/02_Model_QUBO.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-1/02_Model_QUBO.ipynb">pobierz</a></td><td class="liczba">13</td></tr>
+<tr><td>Kodowanie dyskretnych problemów optymalizacyjnych za pomocą QUBO / Isinga.<br><span class="meta"><code>03_Przykłady_kodowania_problemow_QUBO_Ising.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-1/03_Przykłady_kodowania_problemow_QUBO_Ising.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-1/03_Przykłady_kodowania_problemow_QUBO_Ising.ipynb">pobierz</a></td><td class="liczba">7</td></tr>
+<tr><td>Algorytm wyczerpującego przeszukiwania<br><span class="meta"><code>04_Algorytm_wyczerpującego_przeszukiwania.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-1/04_Algorytm_wyczerpującego_przeszukiwania.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-1/04_Algorytm_wyczerpującego_przeszukiwania.ipynb">pobierz</a></td><td class="liczba">9</td></tr>
+<tr><td>Gwarancja optymalności<br><span class="meta"><code>05_Przegląd_algorytmow_hurystycznych.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-1/05_Przegląd_algorytmow_hurystycznych.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-1/05_Przegląd_algorytmow_hurystycznych.ipynb">pobierz</a></td><td class="liczba">2</td></tr>
+<tr><td>Kwantowy model Isinga<br><span class="meta"><code>06_Kwantowy_model_Isinga.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-1/06_Kwantowy_model_Isinga.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-1/06_Kwantowy_model_Isinga.ipynb">pobierz</a></td><td class="liczba">3</td></tr>
+<tr><td>Twierdzenie adiabatyczne<br><span class="meta"><code>07_Twierdzenie_adiabatyczne_i_wyzarzanie_kwantowe.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-1/07_Twierdzenie_adiabatyczne_i_wyzarzanie_kwantowe.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-1/07_Twierdzenie_adiabatyczne_i_wyzarzanie_kwantowe.ipynb">pobierz</a></td><td class="liczba">8</td></tr>
+<tr><td>Wyżarzacze kwantowe<br><span class="meta"><code>08_D_Wave.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-1/08_D_Wave.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-1/08_D_Wave.ipynb">pobierz</a></td><td class="liczba">5</td></tr>
+<tr><td>Zadania dodatkowe niewymagające programowania<br><span class="meta"><code>09_zadania_dodatkowe.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-1/09_zadania_dodatkowe.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-1/09_zadania_dodatkowe.ipynb">pobierz</a></td><td class="liczba">1</td></tr>
+</tbody></table></div>
+<h3>Dzień 2 — praktyka: symulowane wyżarzanie, symulowana bifurkacja, GPU</h3>
+<p class="meta">katalog <code>warsztaty/dzien-2</code></p>
+<div class="przewijane"><table><thead><tr><th scope="col">Notatnik</th><th scope="col">Podgląd</th><th scope="col">Plik</th><th scope="col">Komórek</th></tr></thead><tbody>
+<tr><td>Ocean Software<br><span class="meta"><code>01_Praca_z_wyżarzaczami_kwantowymi.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-2/01_Praca_z_wyżarzaczami_kwantowymi.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-2/01_Praca_z_wyżarzaczami_kwantowymi.ipynb">pobierz</a></td><td class="liczba">11</td></tr>
+<tr><td>Algorytm symulowanego wyżarzania<br><span class="meta"><code>02_Algorytm_symulowanego_wyżarzania.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-2/02_Algorytm_symulowanego_wyżarzania.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-2/02_Algorytm_symulowanego_wyżarzania.ipynb">pobierz</a></td><td class="liczba">18</td></tr>
+<tr><td>Algorytm symulowanej bifurkacji<br><span class="meta"><code>03_Algorytm_symulowanej_bifurkacji.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-2/03_Algorytm_symulowanej_bifurkacji.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-2/03_Algorytm_symulowanej_bifurkacji.ipynb">pobierz</a></td><td class="liczba">18</td></tr>
+<tr><td>Wyżarzanie równoległe<br><span class="meta"><code>04_Algorytm_wyżarzania_równoległego.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-2/04_Algorytm_wyżarzania_równoległego.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-2/04_Algorytm_wyżarzania_równoległego.ipynb">pobierz</a></td><td class="liczba">14</td></tr>
+<tr><td>Branch and Bound<br><span class="meta"><code>05_Algorytm_heurystycznego_branch_and_bound.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-2/05_Algorytm_heurystycznego_branch_and_bound.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-2/05_Algorytm_heurystycznego_branch_and_bound.ipynb">pobierz</a></td><td class="liczba">8</td></tr>
+<tr><td>Wykorzystanie procesorów graficznych (GPU) w algorytmach heurystycznych<br><span class="meta"><code>06_GPU.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-2/06_GPU.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-2/06_GPU.ipynb">pobierz</a></td><td class="liczba">17</td></tr>
+</tbody></table></div>
+<h3>Pomiary wydajności algorytmów (wymagają dodatkowego środowiska: GPU, CuPy/PyTorch CUDA)</h3>
+<p class="meta">katalog <code>warsztaty/dzien-2/benchmarks</code></p>
+<div class="przewijane"><table><thead><tr><th scope="col">Notatnik</th><th scope="col">Podgląd</th><th scope="col">Plik</th><th scope="col">Komórek</th></tr></thead><tbody>
+<tr><td>Generowanie danych dla benchmarków<br><span class="meta"><code>obliczenia_dodatkowe_srodowisko.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-2/benchmarks/obliczenia_dodatkowe_srodowisko.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-2/benchmarks/obliczenia_dodatkowe_srodowisko.ipynb">pobierz</a></td><td class="liczba">3</td></tr>
+<tr><td>Generowanie danych dla benchmarków<br><span class="meta"><code>obliczenia_podstawowe_srodowisko.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-2/benchmarks/obliczenia_podstawowe_srodowisko.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-2/benchmarks/obliczenia_podstawowe_srodowisko.ipynb">pobierz</a></td><td class="liczba">4</td></tr>
+<tr><td>Wyniki benchmarków<br><span class="meta"><code>wyniki.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/dzien-2/benchmarks/wyniki.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-2/benchmarks/wyniki.ipynb">pobierz</a></td><td class="liczba">9</td></tr>
+</tbody></table></div>
+<h3>Moduły pomocnicze, instancje testowe i wyprowadzenia rachunkowe</h3>
+<p class="meta">katalog <code>warsztaty/pliki_pomocnicze</code></p>
+<div class="przewijane"><table><thead><tr><th scope="col">Notatnik</th><th scope="col">Podgląd</th><th scope="col">Plik</th><th scope="col">Komórek</th></tr></thead><tbody>
+<tr><td>Wyprowadzenie wzorów:<br><span class="meta"><code>oscylator_harmoniczny_wyprowadzenie.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/oscylator_harmoniczny_wyprowadzenie.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/oscylator_harmoniczny_wyprowadzenie.ipynb">pobierz</a></td><td class="liczba">3</td></tr>
+<tr><td>Wyprowadzenie wzoru na różnicę energii<br><span class="meta"><code>roznica_energii_wyprowadzenie.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/roznica_energii_wyprowadzenie.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/roznica_energii_wyprowadzenie.ipynb">pobierz</a></td><td class="liczba">1</td></tr>
+<tr><td>Problem podziału grafu<br><span class="meta"><code>rozwiazania_wybranych_zadan_dodatkowych.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/rozwiazania_wybranych_zadan_dodatkowych.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/rozwiazania_wybranych_zadan_dodatkowych.ipynb">pobierz</a></td><td class="liczba">4</td></tr>
+<tr><td>Metoda Eulera<br><span class="meta"><code>rozwiazywanie_rownan_rozniczkowych.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/rozwiazywanie_rownan_rozniczkowych.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/rozwiazywanie_rownan_rozniczkowych.ipynb">pobierz</a></td><td class="liczba">14</td></tr>
+<tr><td>Łagodne wprowadzenie do teorii grafów<br><span class="meta"><code>wprowadzenie_do_teorii_grafow.ipynb</code></span></td><td class="bez-lamania"><a href="podglad/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/wprowadzenie_do_teorii_grafow.html">otwórz podgląd</a></td><td class="bez-lamania"><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/wprowadzenie_do_teorii_grafow.ipynb">pobierz</a></td><td class="liczba">13</td></tr>
+</tbody></table></div>
+<h2>Program szkolenia</h2>
+<div class="przewijane"><table><thead><tr><th scope="col">Dokument</th><th scope="col">Rozmiar</th></tr></thead><tbody>
+<tr><td><a href="../materialy/04-kwantowe-wyzarzanie/plan/modul_qa.md">Modul qa</a><br><span class="meta"><code>plan/modul_qa.md</code></span></td><td class="liczba">2 kB</td></tr>
+<tr><td><a href="../materialy/04-kwantowe-wyzarzanie/plan/notes.md">Notes</a><br><span class="meta"><code>plan/notes.md</code></span></td><td class="liczba">1 kB</td></tr>
+<tr><td><a href="../materialy/04-kwantowe-wyzarzanie/plan/podumowanie.md">Podumowanie</a><br><span class="meta"><code>plan/podumowanie.md</code></span></td><td class="liczba">1 kB</td></tr>
+</tbody></table></div>
+<h2>Przykładowe programy</h2>
+<div class="przewijane"><table><thead><tr><th scope="col">Plik</th><th scope="col">Rozmiar</th></tr></thead><tbody>
+<tr><td><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-1/setup.py"><code>warsztaty/dzien-1/setup.py</code></a></td><td class="liczba">1 kB</td></tr>
+<tr><td><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-2/setup.py"><code>warsztaty/dzien-2/setup.py</code></a></td><td class="liczba">1 kB</td></tr>
+<tr><td><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-2/benchmarks/benchmark_data.py"><code>warsztaty/dzien-2/benchmarks/benchmark_data.py</code></a></td><td class="liczba">4 kB</td></tr>
+<tr><td><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/dzien-2/benchmarks/benchmark_functions.py"><code>warsztaty/dzien-2/benchmarks/benchmark_functions.py</code></a></td><td class="liczba">11 kB</td></tr>
+<tr><td><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/__init__.py"><code>warsztaty/pliki_pomocnicze/__init__.py</code></a></td><td class="liczba">1 kB</td></tr>
+<tr><td><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/funkcje_pomocnicze.py"><code>warsztaty/pliki_pomocnicze/funkcje_pomocnicze.py</code></a></td><td class="liczba">6 kB</td></tr>
+<tr><td><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/funkcje_pomocnicze_gpu.py"><code>warsztaty/pliki_pomocnicze/funkcje_pomocnicze_gpu.py</code></a></td><td class="liczba">1 kB</td></tr>
+<tr><td><a href="../materialy/04-kwantowe-wyzarzanie/warsztaty/pliki_pomocnicze/generacja_instancji.py"><code>warsztaty/pliki_pomocnicze/generacja_instancji.py</code></a></td><td class="liczba">2 kB</td></tr>
+</tbody></table></div>
+<h2>Jak uruchomić ćwiczenia</h2>
+<ol class="kroki"><li>Zainstaluj Pythona w wersji 3.10 lub nowszej (<a href="https://www.python.org/downloads/">python.org</a>).</li><li>Pobierz materiały bloku: przejdź do <a href="https://github.com/iitis/AkademiaSztukiKwantowej/tree/master/materialy/04-kwantowe-wyzarzanie">katalogu w repozytorium</a> i użyj przycisku <em>Code → Download ZIP</em> (pobiera całe repozytorium) lub sklonuj je poleceniem <code>git clone https://github.com/iitis/AkademiaSztukiKwantowej.git</code>.</li><li>Zainstaluj wymagane pakiety: <code>pip install -r materialy/04-kwantowe-wyzarzanie/warsztaty/requirements.txt</code></li><li>Uruchom notatniki: <code>jupyter notebook</code> — a następnie otwórz wybrany plik <code>.ipynb</code>.</li></ol>
+<h2>Materiały źródłowe i historia prac</h2>
+<p>Komplet plików roboczych, z których powstały powyższe materiały (źródła LaTeX wraz z rysunkami, wersje robocze notatników, pełna historia zmian), pozostaje w gałęziach autorskich repozytorium: <a href="https://github.com/iitis/AkademiaSztukiKwantowej/tree/bg/quantum_annealing"><code>bg/quantum_annealing</code></a>. Do korzystania z materiałów nie jest potrzebny dostęp do tych gałęzi.</p>
+</main>
+<footer><div class="srodek">
+<p><strong>Akademia Sztuki Kwantowej</strong> — projekt Instytutu Informatyki Teoretycznej
+i Stosowanej Polskiej Akademii Nauk w Gliwicach, nr NdS-II/SP/0222/2024/01.</p>
+<p>Projekt dofinansowany ze środków budżetu państwa w ramach programu Ministra Nauki
+i Szkolnictwa Wyższego „Nauka dla Społeczeństwa II”. Kwota dofinansowania: 1 000 000 zł.</p>
+<p>Materiały udostępniane na licencji Apache 2.0. Strona projektu:
+<a href="https://ask.iitis.pl/">ask.iitis.pl</a> ·
+Repozytorium: <a href="https://github.com/iitis/AkademiaSztukiKwantowej">github.com/iitis/AkademiaSztukiKwantowej</a></p>
+</div></footer>
+</body>
+</html>

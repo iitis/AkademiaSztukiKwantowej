@@ -1,0 +1,33 @@
+\documentclass[varwidth=true,preview]{standalone}
+% \usepackage{fontawesome}
+\usepackage{tikz}
+% \usepackage{circuitikz}
+\usepackage{qcircuit}
+\usetikzlibrary{shadows,arrows.meta,positioning,backgrounds,fit,chains,scopes}
+
+\begin{document}
+
+\tikzset{%
+	materia/.style={draw, fill=blue!20, text width=6.0em, text centered, minimum height=1.5em,drop shadow},
+	etape/.style={materia, text width=8em, minimum width=10em, minimum height=1em, rounded corners, drop shadow},
+	linepart/.style={draw, thick, color=black!50, -LaTeX, dashed},
+	line/.style={draw, thick, color=black!50, -LaTeX},
+	ur/.style={draw, text centered, minimum height=0.01em},
+	back group/.style={fill=yellow!20,rounded corners, draw=black!50, dashed, inner xsep=15pt, inner ysep=10pt},
+  }
+		\begin{tikzpicture}
+			[
+			  start chain=p going below,
+			  every on chain/.append style={etape},
+			  every join/.append style={line},
+			  node distance=1 and -.15,
+			]
+			{
+			  \node [on chain, join] {Algorithm};
+			  \node [on chain, join] {Implementation};
+			  \node [on chain, join] {Quantum assembler};
+			  \node [on chain, join] {Control program};
+			  \node [on chain, join] {Physical system};
+			}
+		  \end{tikzpicture}				  
+\end{document}

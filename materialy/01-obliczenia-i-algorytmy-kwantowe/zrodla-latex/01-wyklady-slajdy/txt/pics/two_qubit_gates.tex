@@ -1,0 +1,23 @@
+\documentclass[multi=my,preview]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{quantikz}
+\begin{document}
+\begin{my}
+    \begin{quantikz}
+        \lstick{$\ket{x}$} & \ctrl{1} & \rstick{$\ket{x}$} \qw \\
+        \lstick{$\ket{y}$} & \targ{}  & \rstick{$\ket{x \oplus y}$} \qw  \\
+    \end{quantikz}
+\end{my}
+\begin{my}
+    \begin{quantikz}
+        \lstick{$\ket{x}$} & \swap{1} & \rstick{$\ket{y}$} \qw \\
+        \lstick{$\ket{y}$} & \targX{}  & \rstick{$\ket{x}$} \qw  \\
+    \end{quantikz}
+\end{my}
+\begin{my}
+    \begin{quantikz}
+        \lstick{} & \gate[wires=2]{\sqrt{\text{SWAP}}} & \rstick{} \qw \\
+        \lstick{} &   & \rstick{} \qw  \\
+    \end{quantikz}
+\end{my}
+\end{document}

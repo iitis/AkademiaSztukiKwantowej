@@ -1,0 +1,47 @@
+
+:root{--tlo:#ffffff;--tekst:#15202b;--przygaszony:#4a5764;--linia:#d6dde5;
+      --akcent:#0b4f9e;--akcent-tlo:#eef4fb;--karta:#f7f9fc}
+@media (prefers-color-scheme:dark){
+ :root{--tlo:#11161c;--tekst:#e8edf2;--przygaszony:#a8b4c0;--linia:#2b3641;
+       --akcent:#7fb4f0;--akcent-tlo:#16202b;--karta:#171e26}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--tlo);color:var(--tekst);
+     font:17px/1.6 "Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
+.pominiecie{position:absolute;left:-9999px;top:0}
+.pominiecie:focus{left:8px;top:8px;background:var(--akcent);color:#fff;padding:8px 14px;z-index:9}
+header.glowny{background:var(--akcent-tlo);border-bottom:1px solid var(--linia);padding:28px 0}
+.srodek{max-width:960px;margin:0 auto;padding:0 20px}
+h1{font-size:2rem;line-height:1.25;margin:0 0 8px}
+h2{font-size:1.4rem;margin:40px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--linia)}
+h3{font-size:1.12rem;margin:26px 0 8px}
+p{margin:0 0 14px}
+a{color:var(--akcent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--akcent);outline-offset:2px}
+.podtytul{color:var(--przygaszony);margin:0}
+.karta{background:var(--karta);border:1px solid var(--linia);border-radius:10px;
+       padding:18px 20px;margin:0 0 16px}
+.karta h3{margin-top:0}
+.karta .meta{color:var(--przygaszony);font-size:.92rem}
+table{border-collapse:collapse;width:100%;margin:0 0 18px;font-size:.96rem}
+caption{text-align:left;color:var(--przygaszony);font-size:.92rem;padding-bottom:6px}
+th,td{border-bottom:1px solid var(--linia);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--karta);font-weight:600}
+td.liczba{text-align:right;white-space:nowrap;color:var(--przygaszony)}
+td.bez-lamania{white-space:nowrap}
+.przewijane{overflow-x:auto}
+code{font-family:ui-monospace,"Cascadia Code","Consolas",monospace;font-size:.92em;
+     background:var(--karta);padding:1px 5px;border-radius:4px}
+pre{background:var(--karta);border:1px solid var(--linia);border-radius:8px;padding:14px;
+    overflow-x:auto}
+pre code{background:none;padding:0}
+ul{margin:0 0 14px;padding-left:22px}
+li{margin-bottom:6px}
+.kroki{list-style:none;padding:0;counter-reset:krok}
+.kroki li{counter-increment:krok;position:relative;padding-left:44px;margin-bottom:16px}
+.kroki li::before{content:counter(krok);position:absolute;left:0;top:0;width:30px;height:30px;
+  border-radius:50%;background:var(--akcent);color:#fff;display:flex;align-items:center;
+  justify-content:center;font-weight:700}
+footer{margin-top:56px;border-top:1px solid var(--linia);background:var(--karta);
+       padding:24px 0;color:var(--przygaszony);font-size:.92rem}
+.nawigacja{font-size:.95rem;color:var(--przygaszony);margin-bottom:10px}
+@media (max-width:620px){body{font-size:16px}h1{font-size:1.55rem}}
