@@ -73,6 +73,23 @@ robocze notatników, pełna historia zmian), pozostają w gałęziach autorskich
 [`zp/QI_intro_lectures`](../../tree/zp/QI_intro_lectures).
 Do korzystania z materiałów nie jest potrzebny dostęp do tych gałęzi.
 
+## Adresy plików wskazywane z zewnątrz
+
+Do wydarzeń w systemie [akademia.iitis.pl](https://akademia.iitis.pl/) dołączono
+odnośniki prowadzące wprost do poniższych plików w tym repozytorium. Zmiana nazwy
+albo przeniesienie pliku zepsuje te odnośniki, a po stronie Indico nie będzie tego
+widać. Ścieżki należy traktować jako stałe:
+
+- `materialy/02-uczenie-maszynowe/wyklady/06-dwa-dni-z-uczeniem-maszynowym-komplet-slajdow.pdf`
+- `materialy/03-kwantowy-perceptron/wyklady/01-kwantowy-perceptron-komplet-materialow.pdf`
+- `materialy/04-kwantowe-wyzarzanie/wyklady/01-kwantowe-wyzarzanie-komplet-materialow.pdf`
+- `materialy/05-kwantowe-uczenie-maszynowe/wyklady/02-kwantowe-uczenie-maszynowe-slajdy.pdf`
+
+Ten sam status mają strony `strona/blok-02.html` do `strona/blok-05.html`, na które
+prowadzą odnośniki z archiwum na [ask.iitis.pl/archiwum](https://ask.iitis.pl/archiwum/).
+Powstają ze skryptu `narzedzia/zbuduj_strone.py`, a ich nazwy zależą od numeracji
+katalogów w `materialy/`.
+
 ## Jak cytować
 
 > Materiały Akademii Sztuki Kwantowej, Instytut Informatyki Teoretycznej i Stosowanej
