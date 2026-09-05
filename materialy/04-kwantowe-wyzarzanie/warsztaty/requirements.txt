@@ -1,3 +1,15 @@
+# Pakiety potrzebne do uruchomienia notatników warsztatowych.
+# Instalacja:  pip install -r requirements.txt
+#
+# Uwagi do poszczególnych zajęć:
+#  - dzień 1 i notatniki 02-05 dnia 2 działają na samym CPU,
+#  - notatniki korzystające z Ocean SDK (dzień 2, notatnik 01) wymagają konta
+#    na cloud.dwavesys.com i tokenu ustawionego poleceniem "dwave config create",
+#  - notatnik 06 dnia 2 wymaga karty graficznej NVIDIA i biblioteki CuPy
+#    dopasowanej do lokalnej wersji CUDA,
+#  - katalog benchmarks/ wymaga dodatkowo pakietów simulated_bifurcation
+#    i omnisolver oraz GPU.
+jupyter
 matplotlib==3.10.0
 networkx==3.4.2
 numpy==2.0.2

@@ -1,6 +1,8 @@
 # Pakiety potrzebne do uruchomienia przykładów z katalogu kod/
 # Instalacja:  pip install -r requirements.txt
+jupyter
 numpy
 matplotlib
 scikit-learn
 pennylane
+jax                         # wymagany przez notatniki pennylane-jax i pennylane-jaxnn

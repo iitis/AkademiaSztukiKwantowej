@@ -150,7 +150,34 @@ def zbuduj_podglady(blok: dict, dane: dict) -> None:
             wpis["podglad"] = None
             continue
         wpis["podglad"] = os.path.relpath(cel, STRONA).replace(os.sep, "/")
+        if not dopisz_makra(cel):
+            print("   UWAGA: nie rozpoznano konfiguracji MathJax w", wpis["rel"])
         dopisz_pasek(cel, blok, wpis)
+
+
+# Notatniki używają makr \bm i \ket z pakietów bm i physics. MathJax ładowany
+# przez nbconvert ich nie zna i wypisuje je jako surowy tekst, więc dokładamy
+# definicje do konfiguracji generowanej przez szablon.
+MAKRA_TEX = """                TeX: {
+                    Macros: {
+                        bm: ["{\\\\boldsymbol{#1}}", 1],
+                        ket: ["{\\\\left|#1\\\\right\\\\rangle}", 1],
+                        bra: ["{\\\\left\\\\langle#1\\\\right|}", 1]
+                    },
+"""
+WZORZEC_TEX = """                TeX: {
+"""
+
+
+def dopisz_makra(plik: str) -> bool:
+    """Wstawia definicje makr do konfiguracji MathJax w podglądzie."""
+    tresc = open(plik, encoding="utf-8").read()
+    if "Macros:" in tresc:
+        return True
+    if WZORZEC_TEX not in tresc:
+        return False
+    open(plik, "w", encoding="utf-8").write(tresc.replace(WZORZEC_TEX, MAKRA_TEX, 1))
+    return True
 
 
 PASEK = """<div style="font:14px/1.5 system-ui,sans-serif;background:#f0f3f7;border-bottom:1px solid #c8d0da;padding:10px 16px;color:#1c2530">
@@ -346,7 +373,7 @@ def strona_bloku(blok: dict, dane: dict) -> None:
         czesci.append(tabela(["Plik", "Rozmiar"], wiersze))
 
     req = []
-    for kandydat in ("requirements.txt", "warsztaty/requirements.txt"):
+    for kandydat in ("warsztaty/requirements.txt", "requirements.txt"):
         if os.path.exists(os.path.join(MATERIALY, blok["katalog"], kandydat)):
             req.append(kandydat)
     if poz["notatniki"]:
@@ -477,7 +504,7 @@ def readme_bloku(blok: dict, dane: dict) -> None:
             tytul = w.get("tytul") or czytelna_nazwa(w["nazwa"])
             L.append(f"| [`{w['rel']}`]({w['rel'].replace(os.sep, '/')}) | {tytul} |")
         L.append("")
-    req = [k for k in ("requirements.txt", "warsztaty/requirements.txt")
+    req = [k for k in ("warsztaty/requirements.txt", "requirements.txt")
            if os.path.exists(os.path.join(MATERIALY, blok["katalog"], k))]
     if poz["notatniki"]:
         L += ["## Jak uruchomić ćwiczenia", "",

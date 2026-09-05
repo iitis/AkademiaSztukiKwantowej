@@ -6,6 +6,6 @@ jupyter
 tqdm
 qiskit
 qiskit-aer
-qiskit-ibm-runtime
+qiskit-ibm-runtime          # dostęp do komputerów IBM Quantum wymaga konta na quantum.ibm.com
 qiskit-machine-learning
 mthree

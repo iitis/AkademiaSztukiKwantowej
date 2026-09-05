@@ -4,3 +4,4 @@ numpy
 matplotlib
 scikit-learn
 pennylane
+jax                         # wymagany przez notatniki z katalogu warsztaty/

@@ -28,7 +28,7 @@ Notatniki można przeczytać w przeglądarce (bez instalacji) korzystając z pod
 ```bash
 git clone https://github.com/iitis/AkademiaSztukiKwantowej.git
 cd AkademiaSztukiKwantowej/materialy/05-kwantowe-uczenie-maszynowe
-pip install -r requirements.txt
+pip install -r warsztaty/requirements.txt
 jupyter notebook
 ```
 
